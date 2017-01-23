@@ -1,0 +1,1808 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>mapred.queue.cug-adm.acl-administer-jobs</name>
+    <value> cug-adm,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-adm.acl-submit-job</name>
+    <value> cug-adm</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-adm.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aladdin.acl-administer-jobs</name>
+    <value> cug-aladdin,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aladdin.acl-submit-job</name>
+    <value> cug-aladdin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aladdin.submittime.pattern</name>
+    <value>*;6-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-asc.acl-administer-jobs</name>
+    <value> cug-ali-asc,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-asc.acl-submit-job</name>
+    <value> cug-ali-asc</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-asc.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-cbu-offer.acl-administer-jobs</name>
+    <value> cug-alibaba-cbu-offer,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-cbu-offer.acl-submit-job</name>
+    <value> cug-alibaba-cbu-offer</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-cbu-offer.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-cbu-tech.acl-administer-jobs</name>
+    <value> cug-alibaba-cbu-tech,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-cbu-tech.acl-submit-job</name>
+    <value> cug-alibaba-cbu-tech</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-cbu-tech.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-crm.acl-administer-jobs</name>
+    <value> cug-alibaba-crm,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-crm.acl-submit-job</name>
+    <value> cug-alibaba-crm</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-crm.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw.acl-administer-jobs</name>
+    <value> cug-alibaba-dw,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw.acl-submit-job</name>
+    <value> cug-alibaba-dw</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-cbu.acl-administer-jobs</name>
+    <value> cug-alibaba-dw-cbu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-cbu.acl-submit-job</name>
+    <value> cug-alibaba-dw-cbu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-cbu-dev.acl-administer-jobs</name>
+    <value> cug-alibaba-dw-cbu-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-cbu-dev.acl-submit-job</name>
+    <value> cug-alibaba-dw-cbu-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-cbu-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-cbu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-es.acl-administer-jobs</name>
+    <value> cug-alibaba-dw-es,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-es.acl-submit-job</name>
+    <value> cug-alibaba-dw-es</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-es.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-icbu.acl-administer-jobs</name>
+    <value> cug-alibaba-dw-icbu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-icbu.acl-submit-job</name>
+    <value> cug-alibaba-dw-icbu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw-icbu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alibaba-dw.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-cs.acl-administer-jobs</name>
+    <value> cug-ali-cs,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-cs.acl-submit-job</name>
+    <value> cug-ali-cs</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-cs.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw.acl-administer-jobs</name>
+    <value> cug-alidw,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw.acl-submit-job</name>
+    <value> cug-alidw</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw-cbu.acl-administer-jobs</name>
+    <value> cug-alidw-cbu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw-cbu.acl-submit-job</name>
+    <value> cug-alidw-cbu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw-cbu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw-dev.acl-administer-jobs</name>
+    <value> cug-alidw-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw-dev.acl-submit-job</name>
+    <value> cug-alidw-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alidw.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alifinance.acl-administer-jobs</name>
+    <value> cug-alifinance,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alifinance.acl-submit-job</name>
+    <value> cug-alifinance</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alifinance.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-icbu.acl-administer-jobs</name>
+    <value> cug-ali-icbu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-icbu.acl-submit-job</name>
+    <value> cug-ali-icbu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-icbu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alipay.acl-administer-jobs</name>
+    <value> cug-alipay,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alipay.acl-submit-job</name>
+    <value> cug-alipay</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-alipay.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-tp.acl-administer-jobs</name>
+    <value> cug-ali-tp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-tp.acl-submit-job</name>
+    <value> cug-ali-tp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ali-tp.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyunmysqlbak.acl-administer-jobs</name>
+    <value> cug-aliyunmysqlbak,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyunmysqlbak.acl-submit-job</name>
+    <value> cug-aliyunmysqlbak</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyunmysqlbak.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyun-phpwind.acl-administer-jobs</name>
+    <value> cug-aliyun-phpwind,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyun-phpwind.acl-submit-job</name>
+    <value> cug-aliyun-phpwind</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyun-phpwind.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyun-wangwang-antispam.acl-administer-jobs</name>
+    <value> cug-aliyun-wangwang-antispam,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyun-wangwang-antispam.acl-submit-job</name>
+    <value> cug-aliyun-wangwang-antispam</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-aliyun-wangwang-antispam.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-analysts.acl-administer-jobs</name>
+    <value> cug-analysts,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-analysts.acl-submit-job</name>
+    <value> cug-analysts</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-analysts.submittime.pattern</name>
+    <value>*;7-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-apaytest.acl-administer-jobs</name>
+    <value> cug-apaytest,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-apaytest.acl-submit-job</name>
+    <value> cug-apaytest</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-apaytest.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-asciaa.acl-administer-jobs</name>
+    <value> cug-asciaa,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-asciaa.acl-submit-job</name>
+    <value> cug-asciaa</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-asciaa.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-ad.acl-administer-jobs</name>
+    <value> cug-b2b-ad,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-ad.acl-submit-job</name>
+    <value> cug-b2b-ad</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-ad.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2bensa.acl-administer-jobs</name>
+    <value> cug-b2bensa,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2bensa.acl-submit-job</name>
+    <value> cug-b2bensa</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2bensa.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-rc.acl-administer-jobs</name>
+    <value> cug-b2b-rc,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-rc.acl-submit-job</name>
+    <value> cug-b2b-rc</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-rc.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-wangwang-antispam.acl-administer-jobs</name>
+    <value> cug-b2b-wangwang-antispam,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-wangwang-antispam.acl-submit-job</name>
+    <value> cug-b2b-wangwang-antispam</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-b2b-wangwang-antispam.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-bda.acl-administer-jobs</name>
+    <value> cug-bda,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-bda.acl-submit-job</name>
+    <value> cug-bda</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-bda.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-bigbrother.acl-administer-jobs</name>
+    <value> cug-bigbrother,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-bigbrother.acl-submit-job</name>
+    <value> cug-bigbrother</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-bigbrother.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-cart.acl-administer-jobs</name>
+    <value> cug-cart,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-cart.acl-submit-job</name>
+    <value> cug-cart</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-cart.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-cdnlog-tu.acl-administer-jobs</name>
+    <value> cug-cdnlog-tu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-cdnlog-tu.acl-submit-job</name>
+    <value> cug-cdnlog-tu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-cdnlog-tu.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dachutmp.acl-administer-jobs</name>
+    <value> cug-dachutmp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dachutmp.acl-submit-job</name>
+    <value> cug-dachutmp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dachutmp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dailyaccesslog.acl-administer-jobs</name>
+    <value> cug-dailyaccesslog,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dailyaccesslog.acl-submit-job</name>
+    <value> cug-dailyaccesslog</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dailyaccesslog.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dataplatform.acl-administer-jobs</name>
+    <value> cug-dataplatform,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dataplatform.acl-submit-job</name>
+    <value> cug-dataplatform</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dataplatform.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dbm.acl-administer-jobs</name>
+    <value> cug-dbm,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dbm.acl-submit-job</name>
+    <value> cug-dbm</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dbm.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dc.acl-administer-jobs</name>
+    <value> cug-dc,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dc.acl-submit-job</name>
+    <value> cug-dc</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dc.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dpc.acl-administer-jobs</name>
+    <value> cug-dpc,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dpc.acl-submit-job</name>
+    <value> cug-dpc</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dpc.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dts.acl-administer-jobs</name>
+    <value> cug-dts,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dts.acl-submit-job</name>
+    <value> cug-dts</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-dts.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ecrm.acl-administer-jobs</name>
+    <value> cug-ecrm,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ecrm.acl-submit-job</name>
+    <value> cug-ecrm</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ecrm.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-edc_datauser.acl-administer-jobs</name>
+    <value> cug-edc_datauser,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-edc_datauser.acl-submit-job</name>
+    <value> cug-edc_datauser</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-edc_datauser.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-edpdm.acl-administer-jobs</name>
+    <value> cug-edpdm,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-edpdm.acl-submit-job</name>
+    <value> cug-edpdm</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-edpdm.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-etao.acl-administer-jobs</name>
+    <value> cug-etao,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-etao.acl-submit-job</name>
+    <value> cug-etao</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-etao.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-eticket.acl-administer-jobs</name>
+    <value> cug-eticket,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-eticket.acl-submit-job</name>
+    <value> cug-eticket</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-eticket.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hitao.acl-administer-jobs</name>
+    <value> cug-hitao,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hitao.acl-submit-job</name>
+    <value> cug-hitao</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hitao.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hjupp.acl-administer-jobs</name>
+    <value> cug-hjupp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hjupp.acl-submit-job</name>
+    <value> cug-hjupp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hjupp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hyzsst.acl-administer-jobs</name>
+    <value> cug-hyzsst,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hyzsst.acl-submit-job</name>
+    <value> cug-hyzsst</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-hyzsst.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-icbuensa.acl-administer-jobs</name>
+    <value> cug-icbuensa,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-icbuensa.acl-submit-job</name>
+    <value> cug-icbuensa</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-icbuensa.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ilike.acl-administer-jobs</name>
+    <value> cug-ilike,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ilike.acl-submit-job</name>
+    <value> cug-ilike</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ilike.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-imagesearch.acl-administer-jobs</name>
+    <value> cug-imagesearch,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-imagesearch.acl-submit-job</name>
+    <value> cug-imagesearch</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-imagesearch_extern.acl-administer-jobs</name>
+    <value> cug-imagesearch_extern,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-imagesearch_extern.acl-submit-job</name>
+    <value> cug-imagesearch_extern</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-imagesearch_extern.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-imagesearch.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-it.acl-administer-jobs</name>
+    <value> cug-it,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-it.acl-submit-job</name>
+    <value> cug-it</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-it.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-juhuasuan.acl-administer-jobs</name>
+    <value> cug-juhuasuan,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-juhuasuan.acl-submit-job</name>
+    <value> cug-juhuasuan</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-juhuasuan.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei.acl-administer-jobs</name>
+    <value> cug-koubei,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei.acl-submit-job</name>
+    <value> cug-koubei</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei-alipay.acl-administer-jobs</name>
+    <value> cug-koubei-alipay,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei-alipay.acl-submit-job</name>
+    <value> cug-koubei-alipay</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei-alipay.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei-dev.acl-administer-jobs</name>
+    <value> cug-koubei-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei-dev.acl-submit-job</name>
+    <value> cug-koubei-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-koubei.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-krq.acl-administer-jobs</name>
+    <value> cug-krq,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-krq.acl-submit-job</name>
+    <value> cug-krq</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-krq.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-lab.acl-administer-jobs</name>
+    <value> cug-lab,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-lab.acl-submit-job</name>
+    <value> cug-lab</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-lab.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-lifeplace.acl-administer-jobs</name>
+    <value> cug-lifeplace,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-lifeplace.acl-submit-job</name>
+    <value> cug-lifeplace</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-lifeplace.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-market.acl-administer-jobs</name>
+    <value> cug-market,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-market.acl-submit-job</name>
+    <value> cug-market</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-market.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-mercury.acl-administer-jobs</name>
+    <value> cug-mercury,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-mercury.acl-submit-job</name>
+    <value> cug-mercury</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-mercury.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-monitor.acl-administer-jobs</name>
+    <value> cug-monitor,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-monitor.acl-submit-job</name>
+    <value> cug-monitor</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-monitor.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-netops.acl-administer-jobs</name>
+    <value> cug-netops,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-netops.acl-submit-job</name>
+    <value> cug-netops</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-netops.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-notify.acl-administer-jobs</name>
+    <value> cug-notify,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-notify.acl-submit-job</name>
+    <value> cug-notify</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-notify.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-nova.acl-administer-jobs</name>
+    <value> cug-nova,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-nova.acl-submit-job</name>
+    <value> cug-nova</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-nova.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-oceanbase.acl-administer-jobs</name>
+    <value> cug-oceanbase,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-oceanbase.acl-submit-job</name>
+    <value> cug-oceanbase</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-oceanbase.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ops.acl-administer-jobs</name>
+    <value> cug-ops,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ops.acl-submit-job</name>
+    <value> cug-ops</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-ops.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-p4p-dev.acl-administer-jobs</name>
+    <value> cug-p4p-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-p4p-dev.acl-submit-job</name>
+    <value> cug-p4p-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-p4p-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-proxydb.acl-administer-jobs</name>
+    <value> cug-proxydb,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-proxydb.acl-submit-job</name>
+    <value> cug-proxydb</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-proxydb.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-public.acl-administer-jobs</name>
+    <value> cug-public,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-public.acl-submit-job</name>
+    <value> cug-public</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-public.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-rds.acl-administer-jobs</name>
+    <value> cug-rds,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-rds.acl-submit-job</name>
+    <value> cug-rds</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-rds.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-scg.acl-administer-jobs</name>
+    <value> cug-scg,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-scg.acl-submit-job</name>
+    <value> cug-scg</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-scg.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec.acl-administer-jobs</name>
+    <value> cug-sec,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec.acl-submit-job</name>
+    <value> cug-sec</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-secevt.acl-administer-jobs</name>
+    <value> cug-secevt,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-secevt.acl-submit-job</name>
+    <value> cug-secevt</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-secevt.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec-log.acl-administer-jobs</name>
+    <value> cug-sec-log,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec-log.acl-submit-job</name>
+    <value> cug-sec-log</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec-log.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec-umid.acl-administer-jobs</name>
+    <value> cug-sec-umid,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec-umid.acl-submit-job</name>
+    <value> cug-sec-umid</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-sec-umid.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shanghu.acl-administer-jobs</name>
+    <value> cug-shanghu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shanghu.acl-submit-job</name>
+    <value> cug-shanghu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shanghu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shop.acl-administer-jobs</name>
+    <value> cug-shop,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shop.acl-submit-job</name>
+    <value> cug-shop</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shop.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shop-tadget.acl-administer-jobs</name>
+    <value> cug-shop-tadget,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shop-tadget.acl-submit-job</name>
+    <value> cug-shop-tadget</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-shop-tadget.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-simbacall.acl-administer-jobs</name>
+    <value> cug-simbacall,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-simbacall.acl-submit-job</name>
+    <value> cug-simbacall</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-simbacall.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-ai.acl-administer-jobs</name>
+    <value> cug-taobao-ai,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-ai.acl-submit-job</name>
+    <value> cug-taobao-ai</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-ai.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobaodba.acl-administer-jobs</name>
+    <value> cug-taobaodba,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobaodba.acl-submit-job</name>
+    <value> cug-taobaodba</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobaodba.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-eagleeye.acl-administer-jobs</name>
+    <value> cug-taobao-eagleeye,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-eagleeye.acl-submit-job</name>
+    <value> cug-taobao-eagleeye</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-eagleeye.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-sns.acl-administer-jobs</name>
+    <value> cug-taobao-sns,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-sns.acl-submit-job</name>
+    <value> cug-taobao-sns</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-taobao-sns.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbad-search-dev.acl-administer-jobs</name>
+    <value> cug-tbad-search-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbad-search-dev.acl-submit-job</name>
+    <value> cug-tbad-search-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbad-search-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo.acl-administer-jobs</name>
+    <value> cug-tbalgo,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo.acl-submit-job</name>
+    <value> cug-tbalgo</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-dev.acl-administer-jobs</name>
+    <value> cug-tbalgo-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-dev.acl-submit-job</name>
+    <value> cug-tbalgo-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-k2-dev.acl-administer-jobs</name>
+    <value> cug-tbalgo-k2-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-k2-dev.acl-submit-job</name>
+    <value> cug-tbalgo-k2-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-k2-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-k2-rank.acl-administer-jobs</name>
+    <value> cug-tbalgo-k2-rank,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-k2-rank.acl-submit-job</name>
+    <value> cug-tbalgo-k2-rank</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-k2-rank.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-rank-dev.acl-administer-jobs</name>
+    <value> cug-tbalgo-rank-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-rank-dev.acl-submit-job</name>
+    <value> cug-tbalgo-rank-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo-rank-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbalgo.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbantispam.acl-administer-jobs</name>
+    <value>ads cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbantispam.acl-submit-job</name>
+    <value>ads </value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbantispam.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbauction.acl-administer-jobs</name>
+    <value> cug-tbauction,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbauction.acl-submit-job</name>
+    <value> cug-tbauction</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbauction.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbbi-dev.acl-administer-jobs</name>
+    <value> cug-tbbi-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbbi-dev.acl-submit-job</name>
+    <value> cug-tbbi-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbbi-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbbp.acl-administer-jobs</name>
+    <value> cug-tbbp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbbp.acl-submit-job</name>
+    <value> cug-tbbp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbbp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbcmp.acl-administer-jobs</name>
+    <value> cug-tbcmp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbcmp.acl-submit-job</name>
+    <value> cug-tbcmp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbcmp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbctu.acl-administer-jobs</name>
+    <value> cug-tbctu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbctu.acl-submit-job</name>
+    <value> cug-tbctu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbctu-dump.acl-administer-jobs</name>
+    <value> cug-tbctu-dump,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbctu-dump.acl-submit-job</name>
+    <value> cug-tbctu-dump</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbctu-dump.submittime.pattern</name>
+    <value>*;9-20;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbctu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdataapplication.acl-administer-jobs</name>
+    <value> cug-tbdataapplication,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdataapplication.acl-submit-job</name>
+    <value> cug-tbdataapplication</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdataapplication-dev.acl-administer-jobs</name>
+    <value> cug-tbdataapplication-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdataapplication-dev.acl-submit-job</name>
+    <value> cug-tbdataapplication-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdataapplication-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdataapplication.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp.acl-administer-jobs</name>
+    <value>taobao cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp.acl-submit-job</name>
+    <value>taobao,tbpre </value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-dev.acl-administer-jobs</name>
+    <value> cug-tbdp-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-dev.acl-submit-job</name>
+    <value> cug-tbdp-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-etao.acl-administer-jobs</name>
+    <value>taobao cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-etao.acl-submit-job</name>
+    <value>taobao </value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-etao.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-halfhour.acl-administer-jobs</name>
+    <value> cug-tbdp-halfhour,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-halfhour.acl-submit-job</name>
+    <value> cug-tbdp-halfhour</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-halfhour.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-pre.acl-administer-jobs</name>
+    <value> cug-tbdp-pre,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-pre.acl-submit-job</name>
+    <value> cug-tbdp-pre</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-pre.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdpqa.acl-administer-jobs</name>
+    <value> cug-tbdpqa,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdpqa.acl-submit-job</name>
+    <value> cug-tbdpqa</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdpqa.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-taobao.acl-administer-jobs</name>
+    <value>taobao cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-taobao.acl-submit-job</name>
+    <value>taobao </value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-taobao.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-tmall.acl-administer-jobs</name>
+    <value>taobao cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-tmall.acl-submit-job</name>
+    <value>taobao </value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdp-tmall.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdump.acl-administer-jobs</name>
+    <value> cug-tbdump,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdump.acl-submit-job</name>
+    <value> cug-tbdump</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbdump.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbexstore.acl-administer-jobs</name>
+    <value> cug-tbexstore,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbexstore.acl-submit-job</name>
+    <value> cug-tbexstore</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbexstore.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbmeta.acl-administer-jobs</name>
+    <value> cug-tbmeta,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbmeta.acl-submit-job</name>
+    <value> cug-tbmeta</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbmeta.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbprofile.acl-administer-jobs</name>
+    <value> cug-tbprofile,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbprofile.acl-submit-job</name>
+    <value> cug-tbprofile</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbprofile.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbptd-dev.acl-administer-jobs</name>
+    <value> cug-tbptd-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbptd-dev.acl-submit-job</name>
+    <value> cug-tbptd-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbptd-dev.submittime.pattern</name>
+    <value>*;9-20;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbsc.acl-administer-jobs</name>
+    <value> cug-tbsc,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbsc.acl-submit-job</name>
+    <value> cug-tbsc</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbsc-dev.acl-administer-jobs</name>
+    <value> cug-tbsc-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbsc-dev.acl-submit-job</name>
+    <value> cug-tbsc-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbsc-dev.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbsc.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbse.acl-administer-jobs</name>
+    <value> cug-tbse,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbse.acl-submit-job</name>
+    <value> cug-tbse</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbservice.acl-administer-jobs</name>
+    <value> cug-tbservice,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbservice.acl-submit-job</name>
+    <value> cug-tbservice</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbservice-buyermodule.acl-administer-jobs</name>
+    <value> cug-tbservice-buyermodule,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbservice-buyermodule.acl-submit-job</name>
+    <value> cug-tbservice-buyermodule</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbservice-buyermodule.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbservice.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbse.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbshequ.acl-administer-jobs</name>
+    <value> cug-tbshequ,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbshequ.acl-submit-job</name>
+    <value> cug-shequ</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbshequ.submittime.pattern</name>
+    <value>*;9-20;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbshop.acl-administer-jobs</name>
+    <value> cug-tbshop,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbshop.acl-submit-job</name>
+    <value> cug-tbshop</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbshop.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso.acl-administer-jobs</name>
+    <value> cug-tbso,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso.acl-submit-job</name>
+    <value> cug-tbso</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso-dev.acl-administer-jobs</name>
+    <value> cug-tbso-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso-dev.acl-submit-job</name>
+    <value> cug-tbso-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso-dev.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso-sec.acl-administer-jobs</name>
+    <value> cug-tbso-sec,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso-sec.acl-submit-job</name>
+    <value> cug-tbso-sec</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso-sec.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbso.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tb-taoke-engine.acl-administer-jobs</name>
+    <value> cug-tb-taoke-engine,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tb-taoke-engine.acl-submit-job</name>
+    <value> cug-tb-taoke-engine</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tb-taoke-engine.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbtop.acl-administer-jobs</name>
+    <value> cug-tbtop,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbtop.acl-submit-job</name>
+    <value> cug-tbtop</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbtop.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tb-union.acl-administer-jobs</name>
+    <value> cug-tb-union,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tb-union.acl-submit-job</name>
+    <value> cug-tb-union</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tb-union.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbwuxian.acl-administer-jobs</name>
+    <value> cug-tbwuxian,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbwuxian.acl-submit-job</name>
+    <value> cug-tbwuxian</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tbwuxian.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcif.acl-administer-jobs</name>
+    <value> cug-tcif,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcif.acl-submit-job</name>
+    <value> cug-tcif</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcif.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcp.acl-administer-jobs</name>
+    <value> cug-tcp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcp.acl-submit-job</name>
+    <value> cug-tcp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcp-dev.acl-administer-jobs</name>
+    <value> cug-tcp-dev,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcp-dev.acl-submit-job</name>
+    <value> cug-tcp-dev</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcp-dev.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tcp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-timetunnel.acl-administer-jobs</name>
+    <value> cug-timetunnel,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-timetunnel.acl-submit-job</name>
+    <value> cug-timetunnel</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-timetunnel.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tlog.acl-administer-jobs</name>
+    <value> cug-tlog,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tlog.acl-submit-job</name>
+    <value> cug-tlog</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tlog.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tmall-public.acl-administer-jobs</name>
+    <value> cug-tmall-public,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tmall-public.acl-submit-job</name>
+    <value> cug-tmall-public</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tmall-public.submittime.pattern</name>
+    <value>*;6-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-trade.acl-administer-jobs</name>
+    <value> cug-trade,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-trade.acl-submit-job</name>
+    <value> cug-trade</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-trade.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tt-merge.acl-administer-jobs</name>
+    <value> cug-tt-merge,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tt-merge.acl-submit-job</name>
+    <value> cug-tt-merge</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-tt-merge.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-verticalmarket.acl-administer-jobs</name>
+    <value> cug-verticalmarket,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-verticalmarket.acl-submit-job</name>
+    <value> cug-verticalmarket</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-verticalmarket.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-webserverlog.acl-administer-jobs</name>
+    <value> cug-webserverlog,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-webserverlog.acl-submit-job</name>
+    <value> cug-webserverlog</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-webserverlog.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wmlp.acl-administer-jobs</name>
+    <value> cug-wmlp,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wmlp.acl-submit-job</name>
+    <value> cug-wmlp</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wmlp.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwclient-yiliao.acl-administer-jobs</name>
+    <value> cug-wwclient-yiliao,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwclient-yiliao.acl-submit-job</name>
+    <value> cug-wwclient-yiliao</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwclient-yiliao.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wweservice.acl-administer-jobs</name>
+    <value> cug-wweservice,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wweservice.acl-submit-job</name>
+    <value> cug-wweservice</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wweservice.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwproducts.acl-administer-jobs</name>
+    <value> cug-wwproducts,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwproducts.acl-submit-job</name>
+    <value> cug-wwproducts</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwproducts.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrv.acl-administer-jobs</name>
+    <value> cug-wwsrv,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrv.acl-submit-job</name>
+    <value> cug-wwsrv</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrvprivate.acl-administer-jobs</name>
+    <value> cug-wwsrvprivate,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrvprivate.acl-submit-job</name>
+    <value> cug-wwsrvprivate</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrvprivate.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrv-pub.acl-administer-jobs</name>
+    <value> cug-wwsrv-pub,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrv-pub.acl-submit-job</name>
+    <value> cug-wwsrv-pub</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrv-pub.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-wwsrv.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-xu.acl-administer-jobs</name>
+    <value> cug-xu,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-xu.acl-submit-job</name>
+    <value> cug-xu</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-xu.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-xyw.acl-administer-jobs</name>
+    <value> cug-xyw,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-xyw.acl-submit-job</name>
+    <value> cug-xyw</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-xyw.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-yisou.acl-administer-jobs</name>
+    <value> cug-yisou,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-yisou.acl-submit-job</name>
+    <value> cug-yisou</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-yisou.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-yunti2.acl-administer-jobs</name>
+    <value> cug-yunti2,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-yunti2.acl-submit-job</name>
+    <value> cug-yunti2</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-yunti2.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-zds.acl-administer-jobs</name>
+    <value> cug-zds,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-zds.acl-submit-job</name>
+    <value> cug-zds</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-zds.submittime.pattern</name>
+    <value>*;9-24;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-zeus.acl-administer-jobs</name>
+    <value> cug-zeus,cug-admin</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-zeus.acl-submit-job</name>
+    <value> cug-zeus</value>
+  </property>
+  <property>
+    <name>mapred.queue.cug-zeus.submittime.pattern</name>
+    <value>*;*;*;*;*</value>
+  </property>
+  <property>
+    <name>mapred.queue.names</name>
+    <value>cug-dc,cug-asciaa,cug-dataplatform,cug-tbdp,cug-tbdp-dev,cug-tbdp-pre,cug-tbsc,cug-tbsc-dev,cug-tbantispam,cug-tbalgo,cug-tbalgo-dev,cug-koubei,cug-tbse,cug-tbdump,cug-tbshequ,cug-tbwuxian,cug-tbtop,cug-tbdp-halfhour,cug-edc_datauser,cug-alibaba-dw,cug-tbptd-dev,cug-tbprofile,cug-tbauction,cug-ilike,cug-dbm,cug-yunti2,cug-alipay,cug-tbexstore,cug-tbso-dev,cug-sec,cug-koubei-alipay,cug-proxydb,cug-tbshop,cug-tbso,cug-etao,cug-shanghu,cug-dts,cug-shop-tadget,cug-ecrm,cug-tbctu-dump,cug-aladdin,cug-aliyun-wangwang-antispam,cug-trade,cug-wmlp,cug-shop,cug-alifinance,cug-public,cug-alidw,cug-tbctu,cug-adm,cug-monitor,cug-tbbi-dev,cug-p4p-dev,cug-tbalgo-rank-dev,cug-tbalgo-k2-dev,cug-analysts,cug-tbbp,cug-alidw-dev,cug-sec-log,cug-taobao-eagleeye,cug-tb-taoke-engine,cug-koubei-dev,cug-zds,cug-secevt,cug-alidw-cbu,cug-ali-icbu,cug-ali-tp,cug-ali-asc,cug-ali-cs,cug-hjupp,cug-hitao,cug-taobaodba,cug-tbmeta,cug-it,cug-xu,cug-simbacall,cug-tbservice,cug-xyw,cug-tbdpqa,cug-b2b-rc,cug-dpc,cug-verticalmarket,cug-b2b-ad,cug-alibaba-dw-es,cug-alibaba-dw-cbu,cug-webserverlog,cug-nova,cug-alibaba-dw-icbu,cug-tbdataapplication,cug-cdnlog-tu,cug-juhuasuan,cug-tbservice-buyermodule,cug-tcp,cug-tmall-public,cug-imagesearch,cug-krq,cug-ops,cug-wwsrv,cug-scg,cug-notify,cug-wwsrv-pub,cug-wweservice,cug-aliyun-phpwind,cug-b2b-wangwang-antispam,cug-tcp-dev,cug-alibaba-dw-cbu-dev,cug-hyzsst,cug-timetunnel,cug-lifeplace,cug-alibaba-crm,cug-tb-union,cug-mercury,cug-rds,cug-tbso-sec,cug-aliyunmysqlbak,cug-yisou,cug-tbad-search-dev,cug-taobao-sns,cug-wwclient-yiliao,cug-edpdm,cug-cart,cug-dailyaccesslog,cug-wwsrvprivate,cug-b2bensa,cug-imagesearch_extern,cug-market,cug-tbdataapplication-dev,cug-sec-umid,cug-oceanbase,cug-tbcmp,cug-tbalgo-k2-rank,cug-tcif,cug-alibaba-cbu-offer,cug-wwproducts,cug-netops,cug-apaytest,cug-zeus,cug-taobao-ai,cug-icbuensa,cug-alibaba-cbu-tech,cug-tbdp-tmall,cug-tbdp-etao,cug-tbdp-taobao,cug-bigbrother,cug-lab,cug-tlog,cug-tt-merge,cug-eticket,cug-dachutmp,cug-bda</value>
+  </property>
+</configuration>

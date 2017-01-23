@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+<!-- HistoryTailer configuration -->
+  <property>
+    <name>tailer.history.dir</name>
+    <value>/mnt/jobhistory/active</value>
+  </property>
+
+  <property>
+    <name>tailer.history.file</name>
+    <value>${tailer.history.dir}/jobhistory.log</value>
+  </property>
+
+  <property>
+    <name>tailer.history.filename.regex</name>
+    <value>jobhistory.log.([0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2})</value>
+  </property>
+
+  <property>
+    <name>tailer.delay</name>
+    <value>0</value>
+    <description>Optional. Specifies the amount of time for tailer thead 
+    to wait for the file to be updated. Default value is one second.</description>
+  </property>
+  
+  <property>
+    <name>tailer.history.backoff</name>
+    <value>0</value>
+    <description>Optional. Specifies the hours before now, during which the rotated 
+    history files should be parse before start to tail ${tailer.history.file}.</description>
+  </property>
+
+</configuration>

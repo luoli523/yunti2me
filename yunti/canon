@@ -1,0 +1,142 @@
+#!/bin/sh
+
+VER=0.1
+
+getpasswd() {
+  if [ -z $PSS ]; then
+    stty -echo
+    echo -n "Your UNIX Password: "
+    read -e PW
+    echo -e "\r"
+    stty echo
+  else
+    PW=$(echo $PSS|base64 -d)
+  fi
+}
+
+ex() {
+  expect -c "set timeout -1
+             log_user 0
+             spawn $*
+             log_user 1
+             while {1} {
+               expect {
+                  *assword*: {
+                    send -- $PW\r
+                  } yes*no {
+                    send yes\r
+                  } y/N {
+                    send y\r
+                  } passphrase {
+                    send \r
+                  } array\? {
+                    send y\r
+                  } eof {
+                    exit
+                  } timeout {
+                    puts EX_TIMEOUT;interact
+                  }
+               }
+             }"
+}
+
+put() {
+  FILE=$2
+  DESTDIR=${@:$#:1}
+  if [ -r $FILE ]; then
+    getpasswd
+    if [ -r $3 ]; then
+      for i in `cat $3`
+      do
+        echo $i
+        ex scp -r $FILE $i:$DESTDIR
+      done
+    else
+      HOSTS=$(echo $3 | sed 's/,/\ /g')
+      for i in $HOSTS
+      do 
+        echo $i
+        ex scp -r $FILE $i:$DESTDIR
+      done
+    fi
+  else
+    echo "File NOT found!"
+    exit 1
+  fi
+}
+
+sput() {
+  FILE=$2
+  DESTDIR=${@:$#:1}
+  if [ -r $FILE ]; then
+    getpasswd
+    if [ -r $3 ]; then
+      for i in `cat $3`
+      do
+        echo $i
+        ex scp -r $FILE $i:/tmp
+        ex ssh -tq $i "sudo cp -R /tmp/$(basename $FILE) $DESTDIR && sudo rm -rf /tmp/$(basename $FILE)"
+      done
+    else
+      HOSTS=$(echo $3 | sed 's/,/\ /g')
+      for i in $HOSTS
+      do 
+        echo $i
+        ex scp -r $FILE $i:/tmp
+        ex ssh -tq $i "sudo cp -R /tmp/$(basename $FILE) $DESTDIR && sudo rm -rf /tmp/$(basename $FILE)"
+      done
+    fi
+  else
+    echo "File NOT found!"
+    exit 1
+  fi
+}
+
+cmd() {
+  CMD=${@:3:$#}
+  if [ ! -z "$CMD" ]; then
+    getpasswd
+    if [ -r $2 ]; then
+      for i in `cat $2`
+      do
+        ex ssh -tq $i "$CMD"
+      done
+    else
+      HOSTS=$(echo $2 | sed 's/,/\ /g')
+      for i in $HOSTS
+      do 
+        echo $i
+        ex ssh -tq $i "$CMD"
+      done
+    fi
+  else
+    usage
+  fi
+}
+
+usage() {
+  echo -e "\n\
+$(basename $0) - version $VER\n\n\
+Functions:\n\
+  put:\tSending file to remote dir where you have write permission\n\
+  sput:\tSending file to remote dir where you need sudo\n\
+  cmd:\tExecuting command on remote host(s)\n\n\
+Usage:\n\
+  $(basename $0)\tput\t< local-file >\t< host[,host1[,..]] | hostlist-file >\t< dest-dir >\n\
+  $(basename $0)\tsput\t< local-file >\t< host[,host1[,..]] | hostlist-file >\t< dest-dir-needs-sudo >\n\
+  $(basename $0)\tcmd\t< host[,host1[,..]] | hostlist-file >\t< command-to-run >"
+}
+
+case "$1" in
+  put)
+    put $@
+    ;;
+  sput)
+    sput $@
+    ;;
+  cmd)
+    cmd $@
+    ;;
+  *)
+    usage
+esac

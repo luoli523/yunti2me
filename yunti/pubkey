@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+VER=0.0.3
+
+getpasswd() {
+  if [ -z $PSS ]; then
+    stty -echo
+    echo -n "Your UNIX Password: "
+    read -e PW
+    echo -e "\r"
+    stty echo
+  else
+    PW=$(echo $PSS|base64 -d)
+  fi
+}
+
+ex() {
+  expect -c "set timeout -1
+             log_user 0
+             spawn $*
+             log_user 1
+             while {1} {
+               expect {
+                  *assword: {
+                    send $PW\r
+                  } *esponse: {
+                    send $PW\r
+                  } yes*no {
+                    send yes\r
+                  } y/N {
+                    send y\r
+                  } passphrase {
+                    send \r
+                  } eof {
+                    exit
+                  } timeout {
+                    puts EX_TIMEOUT;interact
+                  }
+               }
+             }"
+}
+
+getkey() {
+  if [ -r /home/$USER/.ssh/id_dsa -a -r /home/$USER/.ssh/id_dsa.pub ]; then
+    KEYS=id_dsa
+  elif [ -r /home/$USER/.ssh/id_rsa -a -r /home/$USER/.ssh/id_rsa.pub ]; then
+    KEYS=id_rsa
+  elif [ -r /home/$USER/.ssh/identity -a -r /home/$USER/.ssh/identity.pub ]; then
+    KEYS=identity
+  else
+    echo "Can not find the ssh key files! Exiting.."
+    exit 1
+  fi
+}
+
+self() {
+  ex ssh $i "mkdir -p /home/$USER/.ssh"
+  ex ssh $i "chmod 700 /home/$USER/.ssh"
+  ex scp -r /home/$USER/.ssh/${KEYS}* $i:/home/$USER/.ssh
+  ex scp -r /home/$USER/.ssh/${KEYS}.pub $i:/home/$USER/.ssh/authorized_keys
+  ex ssh $i -- 'chmod 600 /home/$USER/.ssh/authorized_keys'
+}
+
+other() {
+  ex ssh $i "sudo mkdir -p /home/$USER/.ssh"
+  ex scp -r /home/$USER/.ssh/${KEYS}* $i:/tmp
+  ex ssh $i "sudo mv /tmp/${KEYS}* /home/$USER/.ssh"
+  ex ssh $i "sudo cp /home/$USER/.ssh/{${KEYS}.pub,authorized_keys}"
+  ex ssh $i "sudo chown -R $USER:users /home/$USER/.ssh"
+}
+
+putkey() {
+  if [ -z "$2" ]; then
+    USER=$(whoami)
+  else
+    USER="$2"
+  fi
+
+  if [ -r $1 ]; then
+    DEST=$(cat $1)
+  else
+    DEST=$(echo $1|sed 's/,/\ /g')
+  fi
+
+  getkey
+  getpasswd
+
+  if [ "$(whoami)" = "$USER" ]; then
+    for i in ${DEST}; do
+      self
+    done
+  else
+    for i in ${DEST}; do
+      other
+    done
+  fi  
+}
+
+usage() {
+  echo -e "\n\
+  $(basename $0) - version $VER\n\n\
+  Usage: $(basename $0)\t< host[,host1[,...]] | hostlist-file >\t[ username ]\n"
+}
+
+case "$1" in
+  ''|-h|--help)
+    usage
+    ;;
+  *)
+    putkey $@
+esac

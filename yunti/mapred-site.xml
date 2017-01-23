@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>hdfs://bigdata-hdp-apache500.xg01:9001</value>
+  </property>
+
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>   
+  </property>
+
+  <property>
+    <name>mapred.tasktracker.map.tasks.maximum</name>
+    <value>5</value>
+  </property>
+
+  <property> 
+    <name>mapred.tasktracker.reduce.tasks.maximum</name>
+    <value>3</value>
+  </property>
+
+  <property>
+    <name>mapred.reduce.tasks</name>
+    <value>18</value>
+  </property>
+
+  <property>
+    <name>io.sort.factor</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>io.sort.mb</name>
+    <value>200</value>
+  </property>
+
+  <property>
+    <name>yarn.app.mapreduce.am.resource.mb</name>
+    <value>1024</value>
+  </property>
+
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1024</value>
+  </property>
+
+  <property>
+    <name>mapreduce.job.queuename</name>
+    <value>default</value>
+  </property>
+
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>1024</value>
+  </property>
+
+  <property>
+    <name>mapreduce.map.java.opts</name>
+    <value>-Xmx768m</value>
+  </property>
+
+  <property>
+    <name>mapreduce.reduce.java.opts</name>
+    <value>-Xmx768m</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>bigdata-hdp-apache500.xg01:10020</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>bigdata-hdp-apache500.xg01:19888</value>
+  </property>
+
+  <property>
+    <name>mapreduce.map.output.compress</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.move.thread-count</name>
+    <value>40</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.move.interval-ms</name>
+    <value>10000</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.cleaner.interval-ms</name>
+    <value>86400</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.max-age-ms</name>
+    <value>604800</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.client.thread-count</name>
+    <value>100</value>
+  </property>
+
+  <property>
+    <name>mapreduce.job.split.metainfo.maxsize</name>
+    <value>-1</value>
+  </property>
+
+  <property>
+    <name>mapreduce.am.max-attempts</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <name>yarn.app.mapreduce.am.command-opts</name>
+    <value>-Xmx1024m</value>
+  </property>
+
+  <property>
+    <name>mapreduce.job.reduce.slowstart.completedmaps</name>
+    <value>1</value>
+  </property>
+
+</configuration>

@@ -1,0 +1,1553 @@
+<?xml version="1.0"?>
+<allocations>
+	<pool name="cug-wwclient-yiliao">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ali-cs">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-it">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-sec-umid">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-yunti2">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbsc">
+		<minMaps>2140</minMaps>
+		<maxMaps>3600</maxMaps>
+		<minReduces>760</minReduces>
+		<maxReduces>2500</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.5</lazyReduce>
+	</pool>
+	<pool name="cug-aliyun-phpwind">
+		<minMaps>0</minMaps>
+		<maxMaps>110</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>110</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbantispam-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-timetunnel">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-dataplatform">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>400</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-crm-dw">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-edpdm">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-notify">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-koubei-alipay">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-sec-log">
+		<minMaps>0</minMaps>
+		<maxMaps>10</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>10</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-rds">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-lifeplace">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbso-sec">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbcs">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-aliyunmysqlbak">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-adm-tmall">
+		<minMaps>0</minMaps>
+		<maxMaps>1080</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>810</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-taobao-eagleeye">
+		<minMaps>0</minMaps>
+		<maxMaps>5</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>5</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-edc_datauser">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-yisou">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-wwsrvprivate">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-eticket">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alipay">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-simbacall">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-wwsrv-pub">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-netops">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-proxydb">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-zds">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>3</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbexstore">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alifis-alipay">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-daculog">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alip4p">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>750</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-adm-taobao">
+		<minMaps>0</minMaps>
+		<maxMaps>1280</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>960</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-adm-group">
+		<minMaps>0</minMaps>
+		<maxMaps>560</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>420</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-adm-etao">
+		<minMaps>0</minMaps>
+		<maxMaps>1080</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>810</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-b2b-ad">
+		<minMaps>0</minMaps>
+		<maxMaps>30</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>30</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-imagesearch_extern">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-icbu">
+		<minMaps>0</minMaps>
+		<maxMaps>308</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>92</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-etao">
+		<minMaps>0</minMaps>
+		<maxMaps>1764</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>529</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-cbu">
+		<minMaps>0</minMaps>
+		<maxMaps>570</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>171</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-bigbrother">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>120</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-backuptest">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-tbbi">
+		<minMaps>0</minMaps>
+		<maxMaps>3644</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1643</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-tbdev">
+		<minMaps>0</minMaps>
+		<maxMaps>875</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>262</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-tmall">
+		<minMaps>0</minMaps>
+		<maxMaps>1514</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>454</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts-ana1">
+		<minMaps>0</minMaps>
+		<maxMaps>1412</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>574</maxReduces>
+		<maxRunningJobs>300</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-shanghu">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-active">
+		<minMaps>0</minMaps>
+		<maxMaps>8000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>5000</maxReduces>
+		<maxRunningJobs>100</maxRunningJobs>
+		<weight>5</weight>
+		<useFIFO>true</useFIFO>
+		<lazyReduce>0-2:1</lazyReduce>
+	</pool>
+	<pool name="cug-dtwelve">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>800</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-hjupp">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-halfhour">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbsc-dev">
+		<minMaps>2060</minMaps>
+		<maxMaps>4500</maxMaps>
+		<minReduces>1600</minReduces>
+		<maxReduces>3000</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.5</lazyReduce>
+		<userMaxRunningMaps>1300</userMaxRunningMaps>
+		<userMaxRunningReduces>3000</userMaxRunningReduces>
+	</pool>
+	<pool name="cug-dts">
+		<minMaps>60</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>20</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tcp">
+		<minMaps>220</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>60</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alidw-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-icbu-public">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-dw">
+		<minMaps>40</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>180</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alidw">
+		<minMaps>100</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>40</minReduces>
+		<maxReduces>400</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ali-icbu">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-wmlp">
+		<minMaps>0</minMaps>
+		<maxMaps>320</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>80</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ali-tp">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-dw-es">
+		<minMaps>20</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-asciaa">
+		<minMaps>420</minMaps>
+		<maxMaps>600</maxMaps>
+		<minReduces>320</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-b2b-wangwang-antispam">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-crm">
+		<minMaps>40</minMaps>
+		<maxMaps>150</maxMaps>
+		<minReduces>40</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-b2bensa">
+		<minMaps>260</minMaps>
+		<maxMaps>900</maxMaps>
+		<minReduces>60</minReduces>
+		<maxReduces>700</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-cbu-offer">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ali-asc">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alidw-cbu">
+		<minMaps>160</minMaps>
+		<maxMaps>800</maxMaps>
+		<minReduces>80</minReduces>
+		<maxReduces>800</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-dw-icbu">
+		<minMaps>100</minMaps>
+		<maxMaps>800</maxMaps>
+		<minReduces>120</minReduces>
+		<maxReduces>800</maxReduces>
+		<maxRunningJobs>60</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-taobaodba">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-cdo-oplog">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-wwsrv">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-bda">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-analysts">
+		<minMaps>0</minMaps>
+		<maxMaps>913</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>275</maxReduces>
+		<maxRunningJobs>400</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-9:0.5</lazyReduce>
+	</pool>
+	<pool name="cug-tb-taoke-engine">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbservice">
+		<minMaps>0</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-taobao">
+		<minMaps>3140</minMaps>
+		<maxMaps>8294</maxMaps>
+		<minReduces>1280</minReduces>
+		<maxReduces>3257</maxReduces>
+		<maxRunningJobs>400</maxRunningJobs>
+		<weight>2</weight>
+		<useFIFO>true</useFIFO>
+		<lazyReduce>0-2:1;3-9:0.5</lazyReduce>
+	</pool>
+	<pool name="cug-adm">
+		<minMaps>0</minMaps>
+		<maxMaps>4000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>3000</maxReduces>
+		<maxRunningJobs>50</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-imagesearch">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>400</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdataapplication">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbse">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-xu">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tcif">
+		<minMaps>0</minMaps>
+		<maxMaps>0</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>0</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-aladdin">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tmall-public">
+		<minMaps>0</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-koubei">
+		<minMaps>0</minMaps>
+		<maxMaps>900</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>900</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tcp-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbmeta">
+		<minMaps>0</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ilike">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-lab">
+		<minMaps>80</minMaps>
+		<maxMaps>700</maxMaps>
+		<minReduces>60</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-mercury">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbso-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbbp">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-secevt">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbcmp">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>24</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-taobao-sns">
+		<minMaps>0</minMaps>
+		<maxMaps>250</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>150</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbalgo-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>2500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbservice-buyermodule">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbbi-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>25</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-dw-cbu">
+		<minMaps>120</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>100</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>60</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-nova">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-oceanbase">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ops">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-wweservice">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbad-search-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-wwproducts">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tt-merge">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-aliyun-wangwang-antispam">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbauction">
+		<minMaps>0</minMaps>
+		<maxMaps>400</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>12</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-shop">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-monitor">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<useFIFO>true</useFIFO>
+		<lazyReduce>0-0:1</lazyReduce>
+	</pool>
+	<pool name="cug-tbalgo-rank-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-tmall">
+		<minMaps>0</minMaps>
+		<maxMaps>1649</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>445</maxReduces>
+		<maxRunningJobs>200</maxRunningJobs>
+		<weight>2</weight>
+		<useFIFO>true</useFIFO>
+		<lazyReduce>0-2:1;3-9:0.5</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp">
+		<minMaps>0</minMaps>
+		<maxMaps>3000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>249</maxRunningJobs>
+		<weight>2</weight>
+		<useFIFO>true</useFIFO>
+		<lazyReduce>0-2:1;3-9:0.5</lazyReduce>
+	</pool>
+	<pool name="cug-tb-union">
+		<minMaps>0</minMaps>
+		<maxMaps>50</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-xyw">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbalgo-k2-rank">
+		<minMaps>0</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alifinance">
+		<minMaps>0</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-public">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.5</lazyReduce>
+		<userMaxRunningMaps>150</userMaxRunningMaps>
+		<userMaxRunningReduces>80</userMaxRunningReduces>
+	</pool>
+	<pool name="cug-sec">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>12</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbctu">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdataapplication-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-market">
+		<minMaps>0</minMaps>
+		<maxMaps>800</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-juhuasuan">
+		<minMaps>0</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>15</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdpqa">
+		<minMaps>0</minMaps>
+		<maxMaps>3000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>3000</maxReduces>
+		<maxRunningJobs>32</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-hyzsst">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-hitao">
+		<minMaps>0</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-dw-cbu-dev">
+		<minMaps>20</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-dailyaccesslog">
+		<minMaps>0</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-shop-tadget">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-b2b-rc">
+		<minMaps>20</minMaps>
+		<maxMaps>200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbptd-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-ecrm">
+		<minMaps>0</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-verticalmarket">
+		<minMaps>0</minMaps>
+		<maxMaps>800</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>400</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-scg">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-p4p-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>600</maxReduces>
+		<maxRunningJobs>6</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-cdnlog-tu">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbctu-dump">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-cart">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-etao">
+		<minMaps>0</minMaps>
+		<maxMaps>1200</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>400</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-koubei-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbalgo-k2-dev">
+		<minMaps>0</minMaps>
+		<maxMaps>1500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1500</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-trade">
+		<minMaps>0</minMaps>
+		<maxMaps>600</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>600</maxReduces>
+		<maxRunningJobs>8</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbalgo">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-zeus">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbshop">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-webserverlog">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-dbm">
+		<minMaps>0</minMaps>
+		<maxMaps>150</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>150</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-apaytest">
+		<minMaps>0</minMaps>
+		<maxMaps>800</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>15</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-pre">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbantispam">
+		<minMaps>0</minMaps>
+		<maxMaps>120</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>120</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbwuxian">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>36</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbprofile">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>2000</maxReduces>
+		<maxRunningJobs>20</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-dc">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>1000</maxReduces>
+		<maxRunningJobs>6</maxRunningJobs>
+		<weight>3</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tlog">
+		<minMaps>0</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>50</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdump">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-dpc">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbtop">
+		<minMaps>0</minMaps>
+		<maxMaps>2000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbso">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>15</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-taobao-ai">
+		<minMaps>0</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>200</maxReduces>
+		<maxRunningJobs>15</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-icbuensa">
+		<minMaps>20</minMaps>
+		<maxMaps>300</maxMaps>
+		<minReduces>40</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-alibaba-cbu-tech">
+		<minMaps>20</minMaps>
+		<maxMaps>100</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>100</maxReduces>
+		<maxRunningJobs>10</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-krq">
+		<minMaps>0</minMaps>
+		<maxMaps>500</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>500</maxReduces>
+		<maxRunningJobs>5</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+	<pool name="cug-tbdp-etao">
+		<minMaps>660</minMaps>
+		<maxMaps>5000</maxMaps>
+		<minReduces>600</minReduces>
+		<maxReduces>4000</maxReduces>
+		<maxRunningJobs>200</maxRunningJobs>
+		<weight>2</weight>
+		<useFIFO>true</useFIFO>
+		<lazyReduce>0-2:1;3-9:0.5</lazyReduce>
+	</pool>
+	<pool name="cug-dachutmp">
+		<minMaps>0</minMaps>
+		<maxMaps>1000</maxMaps>
+		<minReduces>0</minReduces>
+		<maxReduces>300</maxReduces>
+		<maxRunningJobs>30</maxRunningJobs>
+		<weight>1</weight>
+		<lazyReduce>0-0:0.7</lazyReduce>
+	</pool>
+<userMaxJobsDefault>500</userMaxJobsDefault>
+</allocations>

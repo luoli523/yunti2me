@@ -1,0 +1,78 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+export HADOOP_HOME=/home/deepmap/hadoop
+export HADOOP_HDFS_HOME=/home/deepmap/hadoop
+export PATH=$HADOOP_HOME/bin:$PATH
+
+export LANG=en_US.UTF-8
+export PYTHONPATH="/home/deepmap/xgboost/python-package:/home/deepmap/mxnet/python:/home/deepmap/mxnet/example/image-classification:${PYTHONPATH}"
+
+alias la='ls -a'
+alias vi='vim'
+alias v='ls -l'
+alias s='source ~/.bashrc'
+alias vb='vi ~/.bashrc'
+alias grep='grep --color'
+alias e='exit'
+alias pscp='pscp.pssh'
+
+
+alias 00='ssh bigdata-dlp-server00'
+alias 01='ssh bigdata-dlp-server01'
+alias 02='ssh bigdata-dlp-server02'
+alias 03='ssh bigdata-dlp-server03'
+alias 04='ssh bigdata-dlp-server04'
+alias 05='ssh bigdata-dlp-server05'
+alias 06='ssh bigdata-dlp-server06'
+alias 07='ssh bigdata-dlp-server07'
+alias 08='ssh bigdata-dlp-server08'
+alias 09='ssh bigdata-dlp-server09'
+alias 10='ssh bigdata-dlp-server10'
+alias 11='ssh bigdata-dlp-server11'
+alias 12='ssh bigdata-dlp-server12'
+alias 13='ssh bigdata-dlp-server13'
+alias 14='ssh bigdata-dlp-server14'
+alias 15='ssh bigdata-dlp-server15'
+alias 16='ssh bigdata-dlp-server16'
+alias 17='ssh bigdata-dlp-server17'
+alias 18='ssh bigdata-dlp-server18'
+alias 19='ssh bigdata-dlp-server19'
+alias 20='ssh bigdata-dlp-server20'
+alias 21='ssh bigdata-dlp-server21'
+alias 22='ssh bigdata-dlp-server22'
+alias 23='ssh bigdata-dlp-server23'
+alias 24='ssh bigdata-dlp-server24'
+alias 25='ssh bigdata-dlp-server25'
+alias 26='ssh bigdata-dlp-server26'
+alias 27='ssh bigdata-dlp-server27'
+alias 28='ssh bigdata-dlp-server28'
+alias 29='ssh bigdata-dlp-server29'
+alias 30='ssh bigdata-dlp-server30'
+alias 31='ssh bigdata-dlp-server31'
+alias 32='ssh bigdata-dlp-server32'
+alias 33='ssh bigdata-dlp-server33'
+alias 34='ssh bigdata-dlp-server34'
+alias 35='ssh bigdata-dlp-server35'
+alias 36='ssh bigdata-dlp-server36'
+alias 37='ssh bigdata-dlp-server37'
+alias 38='ssh bigdata-dlp-server38'
+alias 39='ssh bigdata-dlp-server39'
+alias 40='ssh bigdata-dlp-server40'
+alias 41='ssh bigdata-dlp-server41'
+alias 42='ssh bigdata-dlp-server42'
+alias 43='ssh bigdata-dlp-server43'
+alias 44='ssh bigdata-dlp-server44'
+alias 45='ssh bigdata-dlp-server45'
+alias 46='ssh bigdata-dlp-server46'
+alias 47='ssh bigdata-dlp-server47'
+alias 48='ssh bigdata-dlp-server48'
+alias 49='ssh bigdata-dlp-server49'

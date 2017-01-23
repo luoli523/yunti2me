@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+      <name>hadoop.tmp.dir</name>
+      <value>/data/hadoopdata/hadoop-tmp</value>
+    </property>
+    <property> 
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property>
+    <property>
+      <name>dfs.support.append</name>
+        <value>true</value>
+        </property>
+        <property> 
+        <name>fs.trash.interval</name> 
+        <value>10080</value> 
+        <description>Number of minutes between trash checkpoints. 
+          If zero, the trash feature is disabled. 
+        </description> 
+        </property>
+        <property> 
+          <name>dfs.block.size</name>
+            <value>134217728</value>
+        </property>
+       <property>
+          <name>dfs.name.dir</name>
+          <value>file:///data0/hadoopdata/hadoop-namenode</value>
+       </property>
+       <property>
+        <name>dfs.data.dir</name>
+        <value>file:///data1/hadoopdata/dfs,file:///data2/hadoopdata/dfs,file:///data3/hadoopdata/dfs,file:///data4/hadoopdata/dfs,file:///data5/hadoopdata/dfs,file:///data6/hadoopdata/dfs,file:///data7/hadoopdata/dfs,file:///data8/hadoopdata/dfs,file:///data9/hadoopdata/dfs,file:///data10/hadoopdata/dfs,file:///data11/hadoopdata/dfs</value>
+     </property>
+     <property>
+     <name>dfs.nameservices</name>
+     <value>mycluster-tj</value>
+     <description>Logical name for this newnameservice</description>
+</property>
+<property>
+     <name>dfs.ha.namenodes.mycluster-tj</name>
+     <value>nn1,nn2</value>
+    <description>Unique identifiers for each NameNode in thenameservice</description>
+</property>
+<property>
+    <name>dfs.namenode.rpc-address.mycluster-tj.nn1</name>
+    <value>bigdata-hdp-apachenn01.xg01:8020</value>
+</property>
+<property>
+     <name>dfs.namenode.rpc-address.mycluster-tj.nn2</name>
+     <value>bigdata-hdp-apachenn02.xg01:8020</value>
+</property>
+<property>
+     <name>dfs.namenode.http-address.mycluster-tj.nn1</name>
+    <value>bigdata-hdp-apachenn01.xg01:50070</value>
+</property>
+<property>
+     <name>dfs.namenode.http-address.mycluster-tj.nn2</name>
+    <value>bigdata-hdp-apachenn02.xg01:50070</value>
+</property>
+<property>
+       <name>dfs.namenode.servicerpc-address.mycluster-tj.nn1</name>
+       <value>bigdata-hdp-apachenn01.xg01:8021</value>
+</property>
+<property>
+       <name>dfs.namenode.servicerpc-address.mycluster-tj.nn2</name>
+       <value>bigdata-hdp-apachenn02.xg01:8021</value>
+</property>
+<property>
+    <name>dfs.namenode.shared.edits.dir</name>
+    <value>qjournal://bigdata-hdp-apachenn01.xg01:8485;bigdata-hdp-apachenn02.xg01:8485;bigdata-hdp-apachenn03.xg01:8485/mycluster-tj</value>
+</property>
+<property>
+   <name>dfs.client.failover.proxy.provider.mycluster-tj</name>
+   <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+</property>
+<property>
+       <name>dfs.qjournal.start-segment.timeout.ms</name>
+       <value>120000</value>
+</property>
+<property>
+       <name>dfs.qjournal.select-input-streams.timeout.ms</name>
+       <value>120000</value>
+</property>
+<property>
+       <name>dfs.qjournal.write-txns.timeout.ms</name>
+       <value>120000</value>
+</property>
+<property>
+   <name>dfs.ha.fencing.methods</name>
+   <value>sshfence</value>
+</property>
+<property>
+    <name>dfs.ha.fencing.ssh.private-key-files</name>
+    <value>/home/hadoop/.ssh/id_rsa</value>
+</property>
+<property>
+    <name>dfs.ha.fencing.ssh.connect-timeout</name>
+     <value>30000</value>
+</property>
+<property>
+     <name>dfs.journalnode.edits.dir</name>
+     <value>/data0/hadoopdata/journaldata</value>
+</property>
+<property>
+      <name>dfs.ha.automatic-failover.enabled</name>
+      <value>true</value>
+</property>       
+<property>
+         <name>dfs.datanode.max.xcievers</name>
+         <value>8192</value>
+  </property>
+  <property>
+      <name>dfs.namenode.handler.count</name>
+          <value>256</value>
+   </property>
+    <property>
+        <name>dfs.namenode.service.handler.count</name>
+         <value>256</value>
+   </property>
+   <property>
+       	<name>dfs.datanode.handler.count</name>
+   	<value>196</value>
+   </property>
+  <!--
+       <property>
+        <name>dfs.datanode.socket.write.timeout</name>
+        <value>4800000</value>
+   </property>
+-->
+  <property>
+       <name>dfs.namenode.checkpoint.period</name>
+          <value>3600</value>
+     </property>
+     <property>
+        <name>dfs.namenode.checkpoint.txns</name>
+         <value>1000000</value>
+     </property>
+     <property>
+             <name>dfs.image.transfer.timeout</name>
+             <value>600000</value>
+     </property>
+      <property>
+             <name>dfs.image.transfer.bandwidthPerSec</name>
+             <value>629145600</value>
+     </property>
+      <property>
+          <name>dfs.namenode.replication.max-streams</name>
+          <value>500</value>
+       </property>
+       <property>
+          <name>dfs.namenode.replication.max-streams-hard-limit</name>
+        <value>1000</value>
+        </property>
+        <property>
+            <name>dfs.namenode.replication.interval</name>
+          <value>10</value>
+         </property>
+       <property>
+          <name>dfs.namenode.replication.work.multiplier.per.iteration</name>
+          <value>8</value>
+        </property>
+        <property>
+            <name>dfs.namenode.invalidate.work.pct.per.iteration</name>
+            <value>0.25f</value>
+        </property>
+        <property> 
+          <name>dfs.datanode.balance.bandwidthPerSec</name> 
+             <value>104857600</value> 
+       </property>
+       <property>
+          <name>dfs.datanode.balance.max.concurrent.moves</name>
+          <value>100</value>
+       </property>
+       <property>
+          <name>dfs.balancer.moverThreads</name>
+          <value>5000</value>
+       </property>
+       <property>
+          <name>dfs.balancer.dispatcherThreads</name>
+          <value>500</value>
+       </property>
+        <property>
+          <name>dfs.namenode.heartbeat.recheck-interval</name>
+             <value>150000</value>
+       </property>
+        <property>
+          <name>dfs.heartbeat.interval</name>
+             <value>3</value>
+       </property>
+      <property>
+            <name>dfs.client.read.shortcircuit</name>
+            <value>true</value>
+        </property>
+        <property>
+            <name>dfs.domain.socket.path</name>
+            <value>/var/lib/hadoop-hdfs/dn_socket</value>
+        </property>
+<property>
+            <name>dfs.datanode.du.reserved</name>
+            <value>322122547200</value>
+        </property>
+  <property>
+       <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+        <value>false</value>
+</property>
+  <property>
+       <name>dfs.namenode.audit.log.async</name>
+        <value>true</value>
+</property>
+ <property>
+       <name>dfs.datanode.failed.volumes.tolerated</name>
+       <value>1</value>
+</property>
+ <property>
+       <name>dfs.namenode.num.checkpoints.retained</name>
+       <value>5</value>
+</property>
+<property>
+    <name>hadoop.security.group.mapping.redis.ip</name>
+    <value>10.93.57.49</value>
+</property>
+<property>
+    <name>hadoop.security.group.mapping</name>
+    <value>org.apache.hadoop.security.RedisBasedGroupsMapping</value>
+</property>
+</configuration>
