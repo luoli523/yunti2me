@@ -132,25 +132,6 @@ alias e='exit'
 
 yjp_home="~/disk2/soft/yjp-12.0.5"
 alias yjp="nohup ${yjp_home}/bin/yjp.sh 1>/tmp/yjp.log 2>&1 </dev/null &"
-alias vhost='ssh guili.ll@10.125.4.190' 
-
-#alias outlink='ssh -D 26000 luoli@106.187.49.135'
-alias outlink='ssh -D 26000 luoli@192.81.130.37'
-alias cddisk2='cd ~/disk2'
-alias cdsoft='cd ~/soft'
-alias cddoc='cd ~/Documents'
-alias cdhadoop='cd ~/disk2/hadoop'
-alias cdsvn='cd ~/dev/svn' 
-alias cdgit='cd ~/dev/git' 
-alias cdtrunk='cd ~/dev/svn/Road2Cloud/trunk/hadoop-core' 
-alias cdbranches='cd ~/dev/svn/Road2Cloud/branches' 
-alias cdha='cd ~/dev/svn/Road2Cloud/branches/yunti-branch-for-NN-HA' 
-alias cdcloud='cd ~/dev/svn/Road2Cloud/'
-alias cdfede='cd ~/dev/svn/Road2Cloud/branches/hdfs-branch-for-federation' 
-alias cdhdfs='cd ~/dev/svn/Road2Cloud/yunti-hdfs'
-alias cdcommon='cd ~/dev/svn/Road2Cloud/yunti-common' 
-alias cdmr='cd ~/dev/svn/Road2Cloud/yunti-mr' 
-alias otrunk='cd ~/dev/svn/Apsara/odps/trunk' 
 
 #alias unix2dos='todos' 
 #alias dos2unix='fromdos'
@@ -220,7 +201,3 @@ alias sbuild="build/mvn -Pyarn -Phadoop-2.6 -Dhadoop.version=2.6.0 -DskipTests -
 # flink
 alias fcleanbuild="mvn clean install -DskipTests -Dhadoop.version=2.6.1"
 alias fbuild="mvn install -DskipTests -Dhadoop.version=2.6.1"
-
-
-# didi tiaobanji
-alias xg="ssh 10.93.44.28 -l luolinofear"
