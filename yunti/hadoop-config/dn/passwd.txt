@@ -1,1 +1,0 @@
-hadoop:877c8dde693bbcdd7f4813dca67b01d5:cug-admin:cug-dc

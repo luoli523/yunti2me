@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<taskTrackers>
-	<taskTracker name="tt1" infos="os:RHEL4;"/>
-	<taskTracker name="tt2" infos="os:RHEL5;"/>
-</taskTrackers>
