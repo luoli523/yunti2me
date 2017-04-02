@@ -80,3 +80,22 @@ val second : PatitialFunction[List[Int], Int] = {
     }
   }
 ```
+
+## PartialFunction的几种写法
+
+比如定义一个函数divide函数，第一种写法是严格按照PartialFunction的函数定义格式，如下：
+
+```scala
+val divide = new PartialFunciton[Int, Int] {
+  def apply(x:Int) = 42 / x
+  def isDefinedAt(x:Int) = x!=0
+}
+```
+
+更常用的方式是使用case来定义PartialFunction，如下：
+
+```scala
+val divide2 : PartialFunciton[Int, Int] => {
+  case x if x != 0 => 42 / 2
+}
+```
