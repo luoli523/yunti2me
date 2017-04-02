@@ -1,6 +1,6 @@
 # 模式匹配和PartialFunction
 
-一个case序列加上一对大括号可以在任何地方呗当做函数使用。实际上，这种情况本身就是一个函数。不同于普通函数只有一个统一的入口，和参数列表，case序列的这种函数有多个入口，每一个入口拥有不同的参数列表。如下例：
+一个case序列加上一对大括号可以在任何地方被当做函数使用。实际上，这种情况本身就是一个函数。不同于普通函数只有一个统一的入口，和参数列表，case序列的这种函数有多个入口，每一个入口拥有不同的参数列表。如下例：
 
 ```scala
 val withDefault: Option[Int] => Int = {
@@ -19,7 +19,7 @@ val withDefault: Option[Int] => Int = {
   res26: Int = 0
 ```
 
-实际上，case序列的函数是Scala中的`PartialFunction`，如果咋运行时给予一个该PartialFunction不支持的参数，那么就会收到`runtime-exception`。 如下例，就是一个返回List中第二个元素的PartialFunction：
+实际上，case序列的函数是Scala中的`PartialFunction`，如果在运行时给予一个该PartialFunction不支持的参数，那么就会收到`runtime-exception`。 如下例，就是一个返回List中第二个元素的PartialFunction：
 
 ```scala
 val second: List[Int] => Int = {
@@ -57,7 +57,7 @@ val second : PatitialFunction[List[Int], Int] = {
 }
 ```
 
-这样second就完全是一个PartialFunction的定义，而所有的PartialFunction都有一个`isDefinedAt`函数，用来确认对于其参数类型，是否定义了相应的匹配case。对于以上定义，由于之定义了包含三个元素的List的定义，那么对于其他类型的参数,`isDefinedAt`就会返回`false`。运行如下例：
+这样second就完全是一个PartialFunction的定义，而所有的PartialFunction都有一个`isDefinedAt`函数，用来确认对于其参数类型，是否定义了相应的匹配case。对于以上定义，由于只定义了包含三个元素的List的定义，那么对于其他类型的参数,`isDefinedAt`就会返回`false`。运行如下例：
 
 ```
   scala> second.isDefinedAt(List(5,6,7))
