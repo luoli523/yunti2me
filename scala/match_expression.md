@@ -3,6 +3,7 @@
 match表达式有多种case匹配模式，比如有常量匹配模式，变量匹配模式，构造函数匹配模式，sequence匹配模式，tuple匹配模式，类型匹配模式等等。
 
 ```scala
+
 def echoWhatYouGaveMe(x: Any): String = x match {   // constant patterns
    case 0 => "zero"
    case true => "true"
@@ -29,6 +30,19 @@ def echoWhatYouGaveMe(x: Any): String = x match {   // constant patterns
    case _ => "Unknown" 
 }
 
+// case class pattern match
+
+trait Animalcase class Dog(name: String) extends Animal 
+case class Cat(name: String) extends Animal 
+case object Woodpecker extends Animal
+
+object CaseClassTest extends App {  def determineType(x: Animal): String = x match {    case Dog(moniker) => "Got a Dog, name = " + moniker 
+    case _:Cat => "Got a Cat (ignoring the name)"
+    case Woodpecker => "That was a Woodpecker"  // matches a object
+    case _ => "That was something else"  }
+  println(determineType(new Dog("Rocky"))) 
+  println(determineType(new Cat("Rusty the Cat")))
+  println(determineType(Woodpecker))}
 ```
 
 ## Adding variables to patterns
