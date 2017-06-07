@@ -1,6 +1,7 @@
 # Index
 
 * [Alluxio笔记](alluxio)
-* [Spark/Scala笔记](spark)
+* [Spark笔记](spark)
 * [Hadoop笔记](yunti)
 * [Guava](guava)
+* [Scala笔记](scala)
