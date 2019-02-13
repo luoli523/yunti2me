@@ -73,12 +73,10 @@ public class YTHT  implements Tool {
 		setConf(conf);
 	}
 
-	@Override
 	public Configuration getConf() {
 		return this.conf;
 	}
 
-	@Override
 	public void setConf(Configuration conf) {
 		if (conf instanceof JobConf) {
 			this.conf = (JobConf) conf;
@@ -95,7 +93,6 @@ public class YTHT  implements Tool {
 		private FileSystem fs;
 		private Configuration conf;
 
-		@Override
 		public void configure(JobConf job) {
 			root = new Path(job.get("ytht.root.dir"));
 			bak = new Path(job.get("ytht.backup.dir"));
@@ -110,7 +107,6 @@ public class YTHT  implements Tool {
 			}
 		}
 
-		@Override
 		public void map(LongWritable key, Text value,
 				OutputCollector<WritableComparable<?>, Text> output,
 				Reporter reporter) throws IOException {
@@ -123,7 +119,6 @@ public class YTHT  implements Tool {
       }
 		}
 
-		@Override
 		public void close() throws IOException {
 
 		}
@@ -665,7 +660,6 @@ public class YTHT  implements Tool {
    *
    */
   static class FileComparator implements Comparator<FileStatus> {
-    @Override
     public int compare(FileStatus o1, FileStatus o2) {
       if(o1.isDir()||o2.isDir()){
         return o1.isDir() ? (o2.isDir() ? 0 : 1) : -1;
@@ -723,7 +717,6 @@ public class YTHT  implements Tool {
 		return other_args;
 	}
 
-	@Override
 	public int run(String[] args) throws Exception {
 		try {
 			List<String> other_args = parseArgument(args);
