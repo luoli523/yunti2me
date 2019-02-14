@@ -1,4 +1,4 @@
-package luoli523.com;
+package luoli523;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.HTable;

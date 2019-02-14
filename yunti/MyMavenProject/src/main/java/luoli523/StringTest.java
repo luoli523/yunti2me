@@ -1,4 +1,4 @@
-package luoli523.com;
+package luoli523;
 
 public class StringTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package luoli523.com;
+package luoli523;
 
 public class MyThread implements Runnable {
   private int num = 0;

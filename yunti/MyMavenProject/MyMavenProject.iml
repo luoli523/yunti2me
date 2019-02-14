@@ -114,5 +114,6 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queryparser:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-sandbox:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
   </component>
 </module>

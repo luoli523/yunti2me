@@ -1,4 +1,4 @@
-package luoli523.com.lucene;
+package luoli523.lucene;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
