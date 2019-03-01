@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.IdentityHashMap;
 
 /**
  * Our Custom Class Loader to load the classes. Any class in the luoli523.classloader
