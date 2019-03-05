@@ -1,4 +1,4 @@
-package luoli523.guava;
+package luoli523.guava.immutable;
 
 import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableList;

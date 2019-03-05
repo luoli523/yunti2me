@@ -1,11 +1,8 @@
-package luoli523.guava;
+package luoli523.guava.immutable;
 
 import com.google.common.collect.ImmutableList;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class ImmutableListEx {
