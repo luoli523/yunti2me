@@ -5,4 +5,5 @@
 * [Hadoop笔记](yunti)
 * [Guava](guava)
 * [Scala笔记](scala)
+* [Java8笔记](java8)
 * [Tools](tools)
