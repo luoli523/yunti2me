@@ -41,22 +41,23 @@ public class StreamCollectorTest {
     System.out.println(averagePrice);
     System.out.println(summingPrice);
   }
+
+  class Product {
+    private String name;
+    private int price;
+
+    public Product(int price, String name) {
+      this.name = name;
+      this.price = price;
+    }
+
+    public String getName() {
+      return name;
+    }
+
+    public int getPrice() {
+      return price;
+    }
+  }
 }
 
-class Product {
-  private String name;
-  private int price;
-
-  public Product(int price, String name) {
-    this.name = name;
-    this.price = price;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getPrice() {
-    return price;
-  }
-}

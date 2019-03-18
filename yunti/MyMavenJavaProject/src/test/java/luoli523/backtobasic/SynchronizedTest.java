@@ -10,25 +10,6 @@ import java.util.stream.IntStream;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-class LuoliSynchronizedMethods {
-  private int sum = 0;
-
-  public int getSum() {
-    return sum;
-  }
-
-  public void setSum(int sum) {
-    this.sum = sum;
-  }
-
-  public void calculate() {
-    setSum(getSum()+1);
-  }
-
-  public synchronized void synchronizedCalculate() {
-    setSum(getSum()+1);
-  }
-}
 
 public class SynchronizedTest {
 
@@ -50,4 +31,23 @@ public class SynchronizedTest {
     assertEquals(1000, cal.getSum());
   }
 
+  class LuoliSynchronizedMethods {
+    private int sum = 0;
+
+    public int getSum() {
+      return sum;
+    }
+
+    public void setSum(int sum) {
+      this.sum = sum;
+    }
+
+    public void calculate() {
+      setSum(getSum()+1);
+    }
+
+    public synchronized void synchronizedCalculate() {
+      setSum(getSum()+1);
+    }
+  }
 }
