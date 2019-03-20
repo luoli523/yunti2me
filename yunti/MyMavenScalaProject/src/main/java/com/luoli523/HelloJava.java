@@ -1,4 +1,4 @@
-package com.luoli523.example;
+package com.luoli523;
 
 public class HelloJava {
   public static void main(String[] args) {

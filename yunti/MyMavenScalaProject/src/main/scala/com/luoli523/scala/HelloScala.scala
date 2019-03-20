@@ -1,4 +1,4 @@
-package com.luoli523.example
+package com.luoli523.scala
 
 object HelloScala {
   def main(args : Array[String]) {
