@@ -12,7 +12,10 @@ import static org.junit.Assert.assertEquals;
 
 public class ExecutorServiceTest {
   private ExecutorService service;
+
+  // Runable中run()方法不接受任何参数，也没有返回值
   Runnable runnableTask;
+  // Callable的call()方法接受返回值，用Future来hold
   Callable<String> callableTask;
   List<Callable<String>> callables = new ArrayList<>();
 

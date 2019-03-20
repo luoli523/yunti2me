@@ -31,11 +31,9 @@ public class RemoveNullsFromList {
 
     // using java8 lambda
     Collections.shuffle(list);
-    /*
-    List<String> listWithoutNull = list.parallelStream()
+    List<Integer> listWithoutNull = list.parallelStream()
             .filter(Objects::nonNull)
             .collect(Collectors.toList());
-    System.out.println(list);
-    */
+    System.out.println(listWithoutNull);
   }
 }
