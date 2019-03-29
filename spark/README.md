@@ -21,6 +21,9 @@
 * 实践 
   * [将txt数据case成table](practice/TxtParseToTable.md)
 * Scala Notes
-  * [scala从字符串中利用正则表达式抽取子字符串](scala_tips/extract_substring_using_regex.md)
-  * [scala中匹配Seq的技巧](scala_tips/seq_matches.md)
-  * [case和PartialFunction](scala_tips/case_partial_function.md)
+  * [scala从字符串中利用正则表达式抽取子字符串](../scala/extract_substring_using_regex.md)
+  * [scala中匹配Seq的技巧](../scala/seq_matches.md)
+  * [case和PartialFunction](../scala/case_partial_function.md)
+  * [scala中break和continue的使用](../scala/break_continue_in_scala.md)
+  * [finally中获取对象引用](../scala/declaring_a_variable_before_using_it_in_try.md)
+  * [Match表达式的各种匹配模式](../scala/match_expression.md)
