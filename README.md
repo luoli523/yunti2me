@@ -7,3 +7,4 @@
 * [Scala笔记](scala)
 * [Java8笔记](java8)
 * [Tools](tools)
+* [Others](others)
