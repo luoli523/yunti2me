@@ -14,6 +14,10 @@ def find_short2(s):
     return min(words_len)
 
 
+def find_short3(s):
+    return len(min(s.split(), key=len))
+
+
 def main():
     print(find_short("bitcoin take over the world maybe who knows perhaps"))
     print(find_short("turns out random test cases are easier than writing out basic ones"))
@@ -27,6 +31,11 @@ def main():
     print(find_short2("i want to travel the world writing code one day"))
     print(find_short2("Lets all go on holiday somewhere very cold"))
 
+    print(find_short3("bitcoin take over the world maybe who knows perhaps"))
+    print(find_short3("turns out random test cases are easier than writing out basic ones"))
+    print(find_short3("lets talk about javascript the best language"))
+    print(find_short3("i want to travel the world writing code one day"))
+    print(find_short3("Lets all go on holiday somewhere very cold"))
 
 if __name__ == '__main__':
     main()
