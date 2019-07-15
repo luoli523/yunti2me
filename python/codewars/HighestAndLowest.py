@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+import unittest
+
+
 def high_and_low(numbers):
     # ...
     num_list = numbers.split()
@@ -44,6 +47,25 @@ def high_and_low4(numbers):
     return "%d %d" % (max(nn), min(nn))
 
 
+class TestHignAndLow(unittest.TestCase):
+
+    def test_high_and_low1(self):
+        numbers = "9 12 15 3 4 2 3 -2 8 1 0"
+        self.assertEqual(high_and_low(numbers), "15 -2")
+
+    def test_high_and_low2(self):
+        numbers = "9 12 15 3 4 2 3 -2 8 1 0"
+        self.assertEqual(high_and_low2(numbers), "15 -2")
+
+    def test_high_and_low3(self):
+        numbers = "9 12 15 3 4 2 3 -2 8 1 0"
+        self.assertEqual(high_and_low3(numbers), "15 -2")
+
+    def test_high_and_low4(self):
+        numbers = "9 12 15 3 4 2 3 -2 8 1 0"
+        self.assertEqual(high_and_low4(numbers), "15 -2")
+
+
 def main():
     numbers = "9 12 15 3 4 2 3 -2 8 1 0"
     print(high_and_low(numbers))
@@ -53,4 +75,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    unittest.main()
