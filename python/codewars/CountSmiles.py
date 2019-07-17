@@ -43,7 +43,7 @@ def count_smileys(arr):
 
 
 def count_smileys2(arr):
-    return len(list(findall("[:;][-~]?[)D]", " ".join(arr))))
+    return len(list(findall(r"[:;][-~]?[)D]", " ".join(arr))))
 
 
 class TestCountSmile(unittest.TestCase):
