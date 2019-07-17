@@ -34,6 +34,23 @@ def to_weird_case2(string):
 
     return ' '.join([to_weird_case_word(w) for w in string.split()])
 
+
+def to_weird_case3(string):
+    words = string.split()
+    result = []
+
+    for w in words:
+        word = []
+        for i in range(len(w)):
+            if i % 2 == 0:
+                word.append(w[i].upper())
+            else:
+                word.append(w[i].lower())
+        result.append(''.join(word))
+
+    return ' '.join(result)
+
+
 class TestWeirdCase(unittest.TestCase):
 
     def test_to_weird_case(self):
@@ -47,6 +64,12 @@ class TestWeirdCase(unittest.TestCase):
         self.assertEqual(to_weird_case2('is'), 'Is')
         self.assertEqual(to_weird_case2('This is a test'), 'ThIs Is A TeSt')
         self.assertEqual(to_weird_case2('Weird string case'), 'WeIrD StRiNg CaSe')
+
+    def test_to_weird_case3(self):
+        self.assertEqual(to_weird_case3('This'), 'ThIs')
+        self.assertEqual(to_weird_case3('is'), 'Is')
+        self.assertEqual(to_weird_case3('This is a test'), 'ThIs Is A TeSt')
+        self.assertEqual(to_weird_case3('Weird string case'), 'WeIrD StRiNg CaSe')
 
 
 def main():
