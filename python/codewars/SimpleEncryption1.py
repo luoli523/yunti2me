@@ -27,19 +27,20 @@ def decrypt(encrypted_text, n):
         return encrypted_text
 
     def sub_decrypt(text):
-        if text or len(text) != 0:
-            even_str = encrypted_text[:int(len(encrypted_text)/2)]
-            odd_str = encrypted_text[int(len(encrypted_text)/2):]
-            re = ""
-            for i in range(len(even_str)):
-                re += odd_str[i]
-                re += even_str[i]
+        if text in ("", None):
+            return text
 
-            if len(encrypted_text) % 2 != 0:
-                re += odd_str[-1]
+        even_str = encrypted_text[:int(len(encrypted_text)/2)]
+        odd_str = encrypted_text[int(len(encrypted_text)/2):]
+        re = ""
+        for i in range(len(even_str)):
+            re += odd_str[i]
+            re += even_str[i]
 
-            return re
-        return text
+        if len(encrypted_text) % 2 != 0:
+            re += odd_str[-1]
+
+        return re
 
     for i in range(n):
         encrypted_text = sub_decrypt(encrypted_text)
@@ -47,31 +48,45 @@ def decrypt(encrypted_text, n):
     return encrypted_text
 
 
+def decrypt2(encrypted_text, n):
+    if encrypted_text in ("", None):
+        return encrypted_text
+
+    # mid = len(encrypted_text) // 2  # in python3
+    mid = int(len(encrypted_text) / 2)
+
+    for i in range(n):
+        first_half = encrypted_text[:mid]
+        second_half = encrypted_text[mid:]
+        encrypted_text = "".join([second_half[i:i+1] + first_half[i:i+1] for i in range(mid + 1)])
+
+    return encrypted_text
+
+
+
+# shability
 def encrypt(text, n):
     if n <= 0:
         return text
 
     def sub_encrypt(text):
-        if text or len(text) != 0:
-            odd_str = []
-            even_str = []
-            [odd_str.append(c) if i % 2 == 0 else even_str.append(c) for i, c in enumerate(text)]
-            return ''.join(even_str) + ''.join(odd_str)
-        return text
+        if text in ("", None):
+            return text
+
+        odd_str = []
+        even_str = []
+        [odd_str.append(c) if i % 2 == 0 else even_str.append(c) for i, c in enumerate(text)]
+        return ''.join(even_str) + ''.join(odd_str)
 
     for i in range(n):
         text = sub_encrypt(text)
     return text
 
-
+# niubility
 def encrypt2(text, n):
     for i in range(n):
         text = text[1::2] + text[::2]
     return text
-
-
-def decrypt2(encrypted_text, n):
-    pass
 
 class TestSimpleEncryption1(unittest.TestCase):
 
