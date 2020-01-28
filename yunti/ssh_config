@@ -1,0 +1,27 @@
+Host *
+  ServerAliveInterval 120
+
+Host jump0
+  HostName shopee-jump-host00
+  User li.luo
+  IdentityFile ~/.ssh/id_rsa
+  ProxyCommand  ssh shopee-jump-host00 -W %h:%p
+
+Host jump1
+  HostName shopee-jump-host01
+  User li.luo
+  IdentityFile ~/.ssh/id_rsa
+  ProxyCommand  ssh shopee-jump-host01 -W %h:%p
+
+Host ops1
+    HostName 10.128.143.201
+    User li.luo
+    IdentityFile ~/.ssh/id_rsa
+    ProxyCommand ssh shopee-jump-host00 -W %h:%p
+
+Host ops2
+    HostName 10.128.143.202
+    User li.luo
+    IdentityFile ~/.ssh/id_rsa
+    ProxyCommand ssh shopee-jump-host00 -W %h:%p
+

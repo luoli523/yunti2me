@@ -109,16 +109,21 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-#export HADOOP_HOME=~/disk2/hadoop/hadoop-0.20.2
+export HADOOP_HOME="/Users/li.luo/dev/hadoop-current"
+export KAFKA_HOME="/Users/li.luo/dev/kafka-current"
+export PRESTO_HOME="/Users/li.luo/dev/presto-current"
+export ZK_HOME="/Users/li.luo/dev/zookeeper-current"
+export SPARK_HOME="/Users/li.luo/dev/spark-current"
+export HIVE_HOME="/Users/li.luo/dev/hive-current"
 #export BTRACE_HOME=~/disk2/soft/btrace-1.1.3
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export M2_HOME="/Users/didi/soft/apache-maven-3.3.9"
+export M2_HOME="/Users/li.luo/soft/packages/apache-maven-3.6.3"
 export GRADLE_HOME="/Users/didi/soft/gradle-2.13"
-export SCALA_HOME="/Users/didi/soft/scala-2.11.8"
+export SCALA_HOME="/usr/local/opt/scala/idea"
 export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
 export ANT_HOME="/Users/didi/soft/apache-ant-1.9.7"
 export BISON_HOME="/usr/local/Cellar/bison/3.0.4"
-export PATH="$GRADLE_HOME/bin:$BISON_HOME/bin:$SCALA_HOME/bin:$BTRACE_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin:/usr/bin:/usr/local/bin:$PATH"
+export PATH="$HIVE_HOME/bin:$HADOOP_HOME/bin:$SPARK_HOME/bin:$KAFKA_HOME/bin:$PRESTO_HOME/bin:$ZK_HOME/bin:$GRADLE_HOME/bin:$BISON_HOME/bin:$SCALA_HOME/bin:$BTRACE_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin:/usr/bin:/usr/local/bin:$PATH"
 
 export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=1024m"
 
@@ -126,7 +131,7 @@ alias la='ls -a'
 alias vi='vim'
 alias v='ls -l'
 alias s='source ~/.bash_profile'
-alias grep='grep --color'
+alias grep='grep --color' 
 alias vb='vi ~/.bash_profile'
 alias e='exit'
 
@@ -136,20 +141,20 @@ alias yjp="nohup ${yjp_home}/bin/yjp.sh 1>/tmp/yjp.log 2>&1 </dev/null &"
 #alias unix2dos='todos' 
 #alias dos2unix='fromdos'
 
-alias hls='bin/hadoop fs -ls '
-alias hlsr='bin/hadoop fs -lsr '
-alias hrm='bin/hadoop fs -rm '
-alias hrmr='bin/hadoop fs -rmr '
-alias hget='bin/hadoop fs -get '
-alias hput='bin/hadoop fs -put '
-alias htouchz='bin/hadoop fs -touchz '
-alias hdu='bin/hadoop fs -du '
-alias hdus='bin/hadoop fs -dus '
-alias hcount='bin/hadoop fs -count '
-alias hmv='bin/hadoop fs -mv '
-alias hcat='bin/hadoop fs -cat '
-alias htext='bin/hadoop fs -text '
-alias hmkdir='bin/hadoop fs -mkdir '
+alias hls='bin/hdfs dfs -ls '
+alias hlsr='bin/hdfs dfs -lsr '
+alias hrm='bin/hdfs dfs -rm '
+alias hrmr='bin/hdfs dfs -rmr '
+alias hget='bin/hdfs dfs -get '
+alias hput='bin/hdfs dfs -put '
+alias htouchz='bin/hdfs dfs -touchz '
+alias hdu='bin/hdfs dfs -du '
+alias hdus='bin/hdfs dfs -dus '
+alias hcount='bin/hdfs dfs -count '
+alias hmv='bin/hdfs dfs -mv '
+alias hcat='bin/hdfs dfs -cat '
+alias htext='bin/hdfs dfs -text '
+alias hmkdir='bin/hdfs dfs -mkdir '
 
 alias p='ibus-daemon -drx'
 
@@ -201,3 +206,19 @@ alias sbuild="build/mvn -Pyarn -Phadoop-2.6 -Dhadoop.version=2.6.0 -DskipTests -
 # flink
 alias fcleanbuild="mvn clean install -DskipTests -Dhadoop.version=2.6.1"
 alias fbuild="mvn install -DskipTests -Dhadoop.version=2.6.1"
+
+# shopee jump
+alias jump0='ssh 103.115.76.108'
+alias jump1='ssh 103.115.76.123'
+alias ptunnel='cd ~/.ssh/ && ./shopee_tunnel.sh; cd -'
+alias ops1='ssh ops1'
+alias ops2='ssh ops2'
+
+# cd apahce
+alias cdpresto='cd /Users/li.luo/dev/presto-current'
+alias cdkafka='cd /Users/li.luo/dev/kafka-current'
+alias cdzk='cd /Users/li.luo/dev/zookeeper-current'
+alias cdspark='cd /Users/li.luo/dev/spark-current'
+alias cdh='cd /Users/li.luo/dev/hadoop-current'
+alias cdhive='cd /Users/li.luo/dev/hive-current'
+alias cddruid='cd /Users/li.luo/dev/druid-current'
