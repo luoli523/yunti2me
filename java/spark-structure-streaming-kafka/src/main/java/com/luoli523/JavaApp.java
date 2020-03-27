@@ -1,10 +1,10 @@
-package luoli523.com;
+package com.luoli523;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class JavaApp
 {
     public static void main( String[] args )
     {

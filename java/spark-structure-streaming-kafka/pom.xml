@@ -80,7 +80,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-                            <mainClass></mainClass>
+                            <mainClass>com.luoli523.ScalaApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
