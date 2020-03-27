@@ -88,7 +88,7 @@
                 </descriptorRefs>
                 <archive>
                     <manifest>
-                        <mainClass>com.luoli523.book.BookRunner</mainClass>
+                        <mainClass>com.luoli523.ScalaBookRunner</mainClass>
                     </manifest>
                 </archive>
             </configuration>
