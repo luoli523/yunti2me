@@ -38,11 +38,15 @@ object KafkaHdfsAuditIngestion {
       .format("kafka")
       .option("kafka.bootstrap.servers", bootstrap)
       .option("subscribe", topic)
+      .option("failOnDataLoss", false)
       .load()
 
     hdfsAuditStreamingInputDF.printSchema()
 
-    val auditDF = hdfsAuditStreamingInputDF.select("value")
+    //val auditDF = hdfsAuditStreamingInputDF.select("value")
+    val auditDF = hdfsAuditStreamingInputDF.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+      .as[(String, String)]
+
 
     val query = auditDF.writeStream
       .outputMode("append")
