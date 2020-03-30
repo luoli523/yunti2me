@@ -47,7 +47,6 @@ object KafkaHdfsAuditIngestion {
     val auditDF = hdfsAuditStreamingInputDF.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
       .as[(String, String)]
 
-
     val query = auditDF.writeStream
       .outputMode("append")
       .format("console")
