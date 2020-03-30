@@ -47,16 +47,11 @@ object KafkaHdfsAuditIngestion {
     val auditDF = hdfsAuditStreamingInputDF.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
       .as[(String, String)]
 
-    /*
     val query = auditDF.writeStream
       .outputMode("append")
       .format("console")
       .option("checkpointLocation", ckptPath)
       .trigger(Trigger.Continuous("5 second"))
-      .start()
-     */
-    val query = auditDF.writeStream
-      .format("console")
       .start()
 
     query.awaitTermination()
