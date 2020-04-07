@@ -300,12 +300,114 @@ This configuration controls how frequently the log compactor will attempt to cle
 By default we will avoid cleaning a log where more than 50% of the log has been compacted. 
 This ratio bounds the maximum space wasted in the log by duplicates (at 50% at most 50% of the log could be duplicates). 
 A higher ratio will mean fewer, more efficient cleanings but will mean more wasted space in the log. 
-If the max.compaction.lag.ms or the min.compaction.lag.ms configurations are also specified, then the log compactor considers the log to be eligible for compaction as soon as either: (i) the dirty ratio threshold has been met and the log has had dirty (uncompacted) records for at least the min.compaction.lag.ms duration, or (ii) if the log has had dirty (uncompacted) records for at most the max.compaction.lag.ms period.
+If the max.compaction.lag.ms or the min.compaction.lag.ms configurations are also specified, 
+then the log compactor considers the log to be eligible for compaction as soon as either: 
+(i) the dirty ratio threshold has been met and the log has had dirty (uncompacted) records for at least the min.compaction.lag.ms duration, or 
+(ii) if the log has had dirty (uncompacted) records for at most the max.compaction.lag.ms period.
 
 * Type: double
 * Default: 0.5
 * Valid Values: [0,...,1]
 * Server Default Property: log.cleaner.min.cleanable.ratio
+* Importance: medium
+```
+
+* **min.compaction.lag.ms**
+
+```shell
+The minimum time a message will remain uncompacted in the log. 
+Only applicable for logs that are being compacted.
+
+* Type: long
+* Default: 0
+* Valid Values: [0,...]
+* Server Default Property: log.cleaner.min.compaction.lag.ms
+* Importance: medium
+```
+
+* **min.insync.replicas**
+
+```shell
+When a producer sets acks to "all" (or "-1"), this configuration specifies the minimum number 
+of replicas that must acknowledge a write for the write to be considered successful. 
+If this minimum cannot be met, then the producer will raise an exception (either 
+NotEnoughReplicas or NotEnoughReplicasAfterAppend).
+When used together, min.insync.replicas and acks allow you to enforce greater durability guarantees. 
+A typical scenario would be to create a topic with a replication factor of 3, set 
+min.insync.replicas to 2, and produce with acks of "all". 
+This will ensure that the producer raises an exception if a majority of replicas 
+do not receive a write.
+
+* Type: int
+* Default: 1
+* Valid Values: [1,...]
+* Server Default Property: min.insync.replicas
+* Importance: medium
+
+```
+
+* **preallocate**
+
+```shell
+True if we should preallocate the file on disk when creating a new log segment.
+
+* Type: boolean
+* Default: false
+* Valid Values:
+* Server Default Property: log.preallocate
+* Importance: medium
+```
+
+* **retention.ms**
+
+```shell
+This configuration controls the maximum time we will retain a log before we will discard old 
+log segments to free up space if we are using the "delete" retention policy. 
+This represents an SLA on how soon consumers must read their data. If set to -1, 
+no time limit is applied.
+
+* Type: long
+* Default: 604800000  #(默认7天)
+* Valid Values: [-1,...]
+* Server Default Property: log.retention.ms
+* Importance: medium
+```
+
+* **segment.bytes**
+
+```shell
+This configuration controls the segment file size for the log. 
+Retention and cleaning is always done a file at a time so a larger segment size means fewer files but less granular control over retention.
+
+* Type: int
+* Default: 1073741824
+* Valid Values: [14,...]
+* Server Default Property: log.segment.bytes
+* Importance: medium
+```
+
+* **segment.ms**
+
+```shell
+This configuration controls the period of time after which Kafka will force the log to roll 
+even if the segment file isn't full to ensure that retention can delete or compact old data.
+
+* Type: long
+* Default: 604800000
+* Valid Values: [1,...]
+* Server Default Property: log.roll.ms
+* Importance: medium
+```
+
+*  **unclean.leader.election.enable**
+
+```shell
+Indicates whether to enable replicas not in the ISR set to be elected as leader as a last resort, even though doing so may result in data loss.
+
+* Type: boolean
+* Default: false
+* Valid Values:
+* Server Default Property: unclean.leader.election.enable
 * Importance: medium
 ```
 
