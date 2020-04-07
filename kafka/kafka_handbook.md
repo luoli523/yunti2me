@@ -109,7 +109,10 @@ kafka中的topic默认都有这些配置选项，如果没有单独做特殊设�
 * **compression.type**
 
 ```shell
-Specify the final compression type for a given topic. This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). It additionally accepts 'uncompressed' which is equivalent to no compression; and 'producer' which means retain the original compression codec set by the producer.
+Specify the final compression type for a given topic. 
+This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). 
+It additionally accepts 'uncompressed' which is equivalent to no compression; 
+and 'producer' which means retain the original compression codec set by the producer.
 
 * Type: string
 * Default: producer
@@ -246,6 +249,64 @@ In previous message format versions, uncompressed records are not grouped into b
 * Server Default Property: message.max.bytes
 * Importance: medium
 
+```
+
+* **message.format.version**
+
+```shell
+Specify the message format version the broker will use to append messages to the logs. 
+The value should be a valid ApiVersion. Some examples are: 0.8.2, 0.9.0.0, 0.10.0, check ApiVersion for more details. 
+By setting a particular message format version, the user is certifying that all the existing messages on disk are smaller or equal than the specified version. 
+Setting this value incorrectly will cause consumers with older versions to break as they will receive messages with a format that they don't understand.
+
+* Type: string
+* Default: 2.4-IV1
+* Valid Values: [0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.10.0-IV0, 0.10.0-IV1, 0.10.1-IV0, 0.10.1-IV1, 0.10.1-IV2, 0.10.2-IV0, 0.11.0-IV0, 0.11.0-IV1, 0.11.0-IV2, 1.0-IV0, 1.1-IV0, 2.0-IV0, 2.0-IV1, 2.1-IV0, 2.1-IV1, 2.1-IV2, 2.2-IV0, 2.2-IV1, 2.3-IV0, 2.3-IV1, 2.4-IV0, 2.4-IV1]
+* Server Default Property: log.message.format.version
+* Importance: medium
+```
+
+* **message.timestamp.difference.max.ms**
+
+```shell
+The maximum difference allowed between the timestamp when a broker receives a message and the timestamp specified in the message. 
+If message.timestamp.type=CreateTime, a message will be rejected if the difference in timestamp exceeds this threshold. 
+This configuration is ignored if message.timestamp.type=LogAppendTime.
+
+* Type: long
+* Default: 9223372036854775807
+* Valid Values: [0,...]
+* Server Default Property: log.message.timestamp.difference.max.ms
+* Importance: medium
+```
+
+* **message.timestamp.type**
+
+```shell
+Define whether the timestamp in the message is message create time or log append time. 
+The value should be either `CreateTime` or `LogAppendTime`
+
+* Type: string
+* Default: CreateTime
+* Valid Values: [CreateTime, LogAppendTime]
+* Server Default Property: log.message.timestamp.type
+* Importance: medium
+```
+
+* **min.cleanable.dirty.ratio**
+
+```shell
+This configuration controls how frequently the log compactor will attempt to clean the log (assuming log compaction is enabled). 
+By default we will avoid cleaning a log where more than 50% of the log has been compacted. 
+This ratio bounds the maximum space wasted in the log by duplicates (at 50% at most 50% of the log could be duplicates). 
+A higher ratio will mean fewer, more efficient cleanings but will mean more wasted space in the log. 
+If the max.compaction.lag.ms or the min.compaction.lag.ms configurations are also specified, then the log compactor considers the log to be eligible for compaction as soon as either: (i) the dirty ratio threshold has been met and the log has had dirty (uncompacted) records for at least the min.compaction.lag.ms duration, or (ii) if the log has had dirty (uncompacted) records for at most the max.compaction.lag.ms period.
+
+* Type: double
+* Default: 0.5
+* Valid Values: [0,...,1]
+* Server Default Property: log.cleaner.min.cleanable.ratio
+* Importance: medium
 ```
 
 
