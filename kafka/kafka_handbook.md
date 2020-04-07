@@ -1,8 +1,10 @@
 # kafka handbook
 
-## 1. topic相关
+## 1. topic
 
-* 创建topic
+### 1.1 topic相关操作
+
+* #### 创建topic
 
   ```bash
   # 创建一个包含1个partition，每个partition只有1个replica(replication-factor)的topic
@@ -20,7 +22,7 @@
                         --topic my-replicated-topic
   ```
 
-* list topic
+* #### list topic
 
   ```bash
   > bin/kafka-topics.sh --zookeeper localhost:9092 \
@@ -28,7 +30,7 @@
   test
   ```
 
-* describe topic
+* #### describe topic
 
   ```bash
   # describe一个包含3个partition，每个partition有3个replica（replication-factor）的topic
@@ -39,13 +41,76 @@
   	Topic: test	Partition: 0	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
   	Topic: test	Partition: 1	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
   	Topic: test	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
-  	
+  ```
+
+### 1.2 topic配置选项操作
+
+Topic相关的配置选项可以在server的config中进行默认设置，当客户端发送命令的时候没有提供相应的配置选项的特殊设定，则会使用server端的默认值。
+
+客户端提供相关选项的设置方式是通过`--config` 选项来设置，如下：
+
+```bash
+> bin/kafka-topics.sh --bootstrap-server localhost:9092 \
+                      --create \
+                      --topic my-topic \
+                      --partitions 1 \
+                      --replication-factor 1 \
+                      --config max.message.bytes=64000 \
+                      --config flush.messages=1
+```
+
+如果需要通过客户端对某些选项进行修改，则使用`kafka-configs.sh`的`--alter` 的`--add-config`设置：
+
+```bash
+> bin/kafka-configs.sh --zookeeper localhost:2181 \
+                       --entity-type topics \
+                       --entity-name my-topic \
+                       --alter \
+                       --add-config max.message.bytes=128000
+```
+
+确认修改是否生效可以用`--describe`如下方式进行查看：
+
+```bash
+> bin/kafka-configs.sh --zookeeper localhost:2181 \
+                       --entity-type topics \
+                       --entity-name my-topic \
+                       --describe
+```
+
+如果需要对某些选项的设置进行删除，用`--delete-config`的方式，如下：
+
+```bash
+> bin/kafka-configs.sh --zookeeper localhost:2181  \
+                       --entity-type topics \
+                       --entity-name my-topic \
+                       --alter \
+                       --delete-config max.message.bytes
+```
+
+### 1.3 topic相关配置选项
+
+kafka中的topic默认都有这些配置选项，如果没有单独做特殊设定，则会使用系统默认值。
+
+* **cleanup.policy**
+
+  ```
+  A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. The default policy ("delete") will discard old segments when their retention time or size limit has been reached. The "compact" setting will enable log compaction on the topic.
   
+  Type: list
+  Default: delete
+  Valid Values: [compact, delete]
+  Server Default Property: log.cleanup.policy
+  Importance: medium
   ```
 
   
 
-## 2. consumer相关
+* 
+
+
+
+## 2. consumer相关操作
 
 * console consumer
 
@@ -55,7 +120,7 @@
                                    --from-beginning
   ```
 
-## 3. producer相关
+## 3. producer相关操作
 
 * console producer
 
@@ -66,7 +131,7 @@ This is a message
 This is another message
 ```
 
-## 4. 集群运维相关
+## 4. 集群运维相关操作
 
 * 启动单个kafka进程
 
