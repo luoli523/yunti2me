@@ -94,6 +94,16 @@ kafka中的topic默认都有这些配置选项，如果没有单独做特殊设�
 
 * **cleanup.policy**
 
+  > A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. The default policy ("delete") will discard old segments when their retention time or size limit has been reached. The "compact" setting will enable log compaction on the topic.
+  >
+  > Type: list
+  > Default: delete
+  > Valid Values: [compact, delete]
+  > Server Default Property: log.cleanup.policy
+  > Importance: medium
+
+  
+
   ```
   A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. The default policy ("delete") will discard old segments when their retention time or size limit has been reached. The "compact" setting will enable log compaction on the topic.
   
