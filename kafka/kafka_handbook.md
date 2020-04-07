@@ -94,29 +94,161 @@ kafka中的topic默认都有这些配置选项，如果没有单独做特殊设�
 
 * **cleanup.policy**
 
-  > A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. The default policy ("delete") will discard old segments when their retention time or size limit has been reached. The "compact" setting will enable log compaction on the topic.
-  >
-  > Type: list
-  > Default: delete
-  > Valid Values: [compact, delete]
-  > Server Default Property: log.cleanup.policy
-  > Importance: medium
-
+  ```shell
+  A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. 
+  The default policy ("delete") will discard old segments when their retention time or size limit has been reached. 
+  The "compact" setting will enable log compaction on the topic.
   
-
-  ```
-  A string that is either "delete" or "compact" or both. This string designates the retention policy to use on old log segments. The default policy ("delete") will discard old segments when their retention time or size limit has been reached. The "compact" setting will enable log compaction on the topic.
-  
-  Type: list
-  Default: delete
-  Valid Values: [compact, delete]
-  Server Default Property: log.cleanup.policy
-  Importance: medium
+  * Type: list
+  * Default: delete
+  * Valid Values: [compact, delete]
+  * Server Default Property: log.cleanup.policy
+  * Importance: medium
   ```
 
-  
+* **compression.type**
 
-* 
+```shell
+Specify the final compression type for a given topic. This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). It additionally accepts 'uncompressed' which is equivalent to no compression; and 'producer' which means retain the original compression codec set by the producer.
+
+* Type: string
+* Default: producer
+* Valid Values: [uncompressed, zstd, lz4, snappy, gzip, producer]
+* Server Default Property: compression.type
+* Importance: medium
+```
+
+* **delete.retention.ms**
+
+```shell
+The amount of time to retain delete tombstone markers for log compacted topics. 
+This setting also gives a bound on the time in which a consumer must complete a read 
+if they begin from offset 0 to ensure that they get a valid snapshot of the final stage 
+(otherwise delete tombstones may be collected before they complete their scan).
+
+* Type: long
+* Default: 86400000
+* Valid Values: [0,...]
+* Server Default Property: log.cleaner.delete.retention.ms
+* Importance: medium
+```
+
+* **file.delete.delay.ms**
+
+```shell
+The time to wait before deleting a file from the filesystem
+
+* Type: long
+* Default: 60000
+* Valid Values: [0,...]
+* Server Default Property: log.segment.delete.delay.ms
+* Importance: medium
+```
+
+* **flush.messages**
+
+```SHELL
+This setting allows specifying an interval at which we will force an fsync of data written to the log. 
+For example if this was set to 1 we would fsync after every message; 
+if it were 5 we would fsync after every five messages. 
+In general we recommend you not set this and use replication for durability and allow the operating system's background flush capabilities 
+as it is more efficient. This setting can be overridden on a per-topic basis (see the per-topic configuration section).
+
+* Type: long
+* Default: 9223372036854775807
+* Valid Values: [0,...]
+* Server Default Property: log.flush.interval.messages
+* Importance: medium
+```
+
+* **flush.ms**
+
+```shell
+This setting allows specifying a time interval at which we will force an fsync of data written to the log. 
+For example if this was set to 1000 we would fsync after 1000 ms had passed. 
+In general we recommend you not set this and use replication for durability and allow the operating system's background flush capabilities as it is more efficient.
+
+* Type: long
+* Default: 9223372036854775807
+* Valid Values: [0,...]
+* Server Default Property: log.flush.interval.ms
+* Importance: medium
+```
+
+* **follower.replication.throttled.replicas**
+
+```shell
+A list of replicas for which log replication should be throttled on the follower side. 
+The list should describe a set of replicas in the form [PartitionId]:[BrokerId],[PartitionId]:[BrokerId]:... 
+or alternatively the wildcard '*' can be used to throttle all replicas for this topic.
+
+* Type: list
+* Default: ""
+* Valid Values: [partitionId]:[brokerId],[partitionId]:[brokerId],...
+* Server Default Property: follower.replication.throttled.replicas
+* Importance: medium
+```
+
+* **index.interval.bytes**
+
+```shell
+This setting controls how frequently Kafka adds an index entry to its offset index. 
+The default setting ensures that we index a message roughly every 4096 bytes. 
+More indexing allows reads to jump closer to the exact position in the log but makes the index larger. 
+You probably don't need to change this.
+
+* Type: int
+* Default: 4096
+* Valid Values: [0,...]
+* Server Default Property: log.index.interval.bytes
+* Importance: medium
+
+```
+
+* **leader.replication.throttled.replicas**
+
+```shell
+A list of replicas for which log replication should be throttled on the leader side. 
+The list should describe a set of replicas in the form [PartitionId]:[BrokerId],[PartitionId]:[BrokerId]:... 
+or alternatively the wildcard '*' can be used to throttle all replicas for this topic.
+
+* Type: list
+* Default: ""
+* Valid Values: [partitionId]:[brokerId],[partitionId]:[brokerId],...
+* Server Default Property: leader.replication.throttled.replicas
+* Importance: medium
+```
+
+* **max.compaction.lag.ms**
+
+```shell
+The maximum time a message will remain ineligible for compaction in the log. 
+Only applicable for logs that are being compacted.
+
+* Type: long
+* Default: 9223372036854775807
+* Valid Values: [1,...]
+* Server Default Property: log.cleaner.max.compaction.lag.ms
+* Importance: medium
+```
+
+* **max.message.bytes**
+
+```shell
+The largest record batch size allowed by Kafka. 
+If this is increased and there are consumers older than 0.10.2, the consumers' fetch size must also be increased so that the they can fetch record batches this large. 
+In the latest message format version, records are always grouped into batches for efficiency. 
+In previous message format versions, uncompressed records are not grouped into batches and this limit only applies to a single record in that case.
+
+* Type: int
+* Default: 1000012
+* Valid Values: [0,...]
+* Server Default Property: message.max.bytes
+* Importance: medium
+
+```
+
+
 
 
 
