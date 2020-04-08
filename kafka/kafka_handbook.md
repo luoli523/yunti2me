@@ -474,3 +474,34 @@ config/server-2.properties:
 ...
 ```
 
+* 优雅的停止Broker
+
+kafka集群在有broker宕机的时候是能够自动的发现并对在这台宕掉机器上的leader partition进行新的leader选举的。通常broker停止的原因要么是crash了，要么是运维上因为需要进行配置修改或者维护目的进行例行重启。在后者这种情况下，除了直接kill掉broker进程外，是有更加优雅的方式来停止kafka进程的。这样做有两个好处：
+
+1. kafka会把所有还没有sync到磁盘中的数据进行commit，以保证数据不会丢失。
+2. kafka会先对当前机器上hold的partition leader转移到其他机器上去，然后再shutdown。这样能够让新的leader选举主动被发起，从而加速新的leader上线的时间，也能够降低对消费端的影响。通常能够将对消费方的影响控制在毫秒级别。
+
+如果采用这种更优雅的方式来停止kafka进程，那么对数据的sync和新的leader选举都将会自动完成，要这样做需要在kafka server config中加入以下配置选项：
+
+```properties
+controlled.shutdown.enable=true
+```
+
+但这里需要注意的是，这种controlled shutdown只对replica大于1的partition有效。
+
+另外还有两个跟这个相关的配置选项是：
+
+```properties
+# controlled shutdown会因为各种原因而失败，这个选项可以控制controlled shutdown的重试次数
+controlled.shutdown.max.retries=3
+
+# 每次重试之间的停顿时间，默认5秒
+controlled.shutdown.retry.backoff.ms=5000
+```
+
+配置了以上选项以后，就可以用如下命令进行broker的停止了：
+
+```shell
+> bin/kafka-server-stop.sh
+```
+
