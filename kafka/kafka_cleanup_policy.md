@@ -67,5 +67,5 @@ retention.bytes=-1
 
 打个比方，比如一个topic中存储的是用户的email地址，key是用户的ID，value是用户的email地址，那么，当某个用户对其email地址进行更新的时候，每次更新就会产生一条新的kafka数据，这条数据实际上是一条changelog，记录了当时时间点这用户的email信息的最新值，但当后续该用户继续对其email进行修改的话，又会产生一条新的changelog，记录其最新数据。所以当kafka对该topic进行cleanup的时候，其cleanup的方式是：对每个key只保留其最新数据，而清理掉那些历史版本。这样topic log中就只记录了某个时间点数据的最新状态，而清理掉其演变成这个状态的整个过程（如下图所示）。这样当应用程序因为某些原因需要重新拉数据，或者bootstrap的时候，就可以从这个状态进行恢复，而不用从头开始还原整个过程，会快很多。
 
-![kafka topic compaction](../images/kafka_log_compaction.png)
+![kafka topic compaction](images/kafka_log_compaction.png)
 
