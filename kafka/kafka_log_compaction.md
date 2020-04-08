@@ -1,1 +1,0 @@
-# kafka log compaction
