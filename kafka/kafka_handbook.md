@@ -505,3 +505,40 @@ controlled.shutdown.retry.backoff.ms=5000
 > bin/kafka-server-stop.sh
 ```
 
+* Balancing leadership
+
+当一个broker宕机，或重启以后，原先以这台broker为leader的partitions将会被转移到其他的broker上去。当这台broker重启以后，就没有任何一个partition的leader在这台机器上，也就不会服务于任何从client（producer或comsumer）来的读写操作，这样会造成这台机器过闲导致的负载不均衡问题。
+
+为了避免这种不平衡，Kafka中有一个概念叫做`preferred replidas`，比如当一个partition的replicas列表是1，5，9的时候，node 1就是这个partition的preferred，因为它出现在replicas列表的第一个。可以用一下命令来触发kafka集群对leadership的重新分配。
+
+```shell
+> bin/kafka-preferred-replica-election.sh --zookeeper zk_host:port/chroot
+```
+
+但是由于这是一个集群层面的操作，通常会运行的很慢，所以也可以通过在服务配置中加入以下配置来对这个过程进行自动执行：
+
+```properties
+auto.leader.rebalance.enable=true
+```
+
+另外，这个工具还可以通过增加`--path-to-json-file`参数来对控制对哪些preferred replica进行leader选举。这个选项后面需要跟一个json文件，该json文件中定义了哪些topics的哪些partition信息。如下示例：
+
+```json
+{
+  "partitions": [
+    {"topic": "foo","partition": 1},
+    {"topic": "foobar","partition": 2}
+  ]
+}
+```
+
+假设该json文件名为`preferred_replica_example_test.json`，那么运行命令如下；
+
+```shell
+bin/kafka-preferred-replica-election.sh --zookeeper localhost:2181 \
+                                        --path-to-json-file preferred_replica_example_test.json
+
+Created preferred replica election path with test-0,test-1,test-2
+Successfully started preferred replica election for partitions Set(test-0, test-1, test-2)
+```
+
