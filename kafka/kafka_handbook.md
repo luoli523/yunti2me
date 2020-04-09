@@ -4,44 +4,44 @@
 
 ### 1.1 topic相关操作
 
-* #### 创建topic
+#### 1.1.1 创建topic
 
-  ```bash
-  # 创建一个包含1个partition，每个partition只有1个replica(replication-factor)的topic
-  > bin/kafka-topics.sh --create \
-                        --zookeeper localhost:2181 \
-                        --replication-factor 1 
-                        --partitions 1 \
-                        --topic test
-  
-  # 创建一个包含1个partition，每个partition只有3个replica(replication-factor)的topic
-  > bin/kafka-topics.sh --create \
-                        --zookeeper localhost:2181 \
-                        --replication-factor 3 \
-                        --partitions 1 \
-                        --topic my-replicated-topic
-  ```
+```bash
+# 创建一个包含1个partition，每个partition只有1个replica(replication-factor)的topic
+> bin/kafka-topics.sh --create \
+                      --zookeeper localhost:2181 \
+                      --replication-factor 1 
+                      --partitions 1 \
+                      --topic test
 
-* #### list topic
+# 创建一个包含1个partition，每个partition只有3个replica(replication-factor)的topic
+> bin/kafka-topics.sh --create \
+                      --zookeeper localhost:2181 \
+                      --replication-factor 3 \
+                      --partitions 1 \
+                      --topic my-replicated-topic
+```
 
-  ```bash
-  > bin/kafka-topics.sh --zookeeper localhost:9092 \
-                        --list
-  test
-  ```
+#### 1.1.2 list topic
 
-* #### describe topic
+```bash
+> bin/kafka-topics.sh --zookeeper localhost:9092 \
+                      --list
+test
+```
 
-  ```bash
-  # describe一个包含3个partition，每个partition有3个replica（replication-factor）的topic
-  > bin/kafka-topics.sh --zookeeper localhost:2181 \
-                        --describe \
-                        --topic test
-  Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
-  	Topic: test	Partition: 0	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
-  	Topic: test	Partition: 1	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
-  	Topic: test	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
-  ```
+#### 1.1.3 describe topic
+
+```bash
+# describe一个包含3个partition，每个partition有3个replica（replication-factor）的topic
+> bin/kafka-topics.sh --zookeeper localhost:2181 \
+                      --describe \
+                      --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
+	Topic: test	Partition: 1	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
+	Topic: test	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
+```
 
 ### 1.2 topic配置选项操作
 
@@ -417,17 +417,17 @@ Indicates whether to enable replicas not in the ISR set to be elected as leader 
 
 ## 2. consumer相关操作
 
-* console consumer
+##### 2.1 console consumer
 
-  ```bash
-  > bin/kafka-console-consumer.sh  --topic test \
-                                   --bootstrap-server localhost:9094 \ #0.10.0及以后的版本这里可以直接提供一台或者多台的broker:port即可，kafka足够智能，知道去哪里找对应的meta信息。不需要写--zookeeper
-                                   --from-beginning
-  ```
+```bash
+> bin/kafka-console-consumer.sh  --topic test \
+                                 --bootstrap-server localhost:9094 \ #0.10.0及以后的版本这里可以直接提供一台或者多台的broker:port即可，kafka足够智能，知道去哪里找对应的meta信息。不需要写--zookeeper
+                                 --from-beginning
+```
 
 ## 3. producer相关操作
 
-* console producer
+#####  3.1 console producer
 
 ```bash
 > bin/kafka-console-producer.sh --broker-list localhost:9092 \
@@ -438,16 +438,16 @@ This is another message
 
 ## 4. 集群运维相关操作
 
-* 启动单个kafka进程
+##### 4.1 启动单个kafka进程
 
-  ```bash
-  # 这里需要确保
-  # 1, zookeeper服务(单点or集群)已经启动
-  # 2, config/server.properties中zk相关的配置已经正确设置
-  bin/kafka-server-start.sh config/server.properties 
-  ```
+```bash
+# 这里需要确保
+# 1, zookeeper服务(单点or集群)已经启动
+# 2, config/server.properties中zk相关的配置已经正确设置
+bin/kafka-server-start.sh config/server.properties 
+```
 
-* 启动多broker kafka集群
+##### 4.2 启动多broker kafka集群
 
 这里是用一台机器上不同端口的启动方式来模拟多台broker，在实际分布式环境中通常是所有kafka进程使用相同的端口
 
@@ -474,7 +474,7 @@ config/server-2.properties:
 ...
 ```
 
-* 优雅的停止Broker
+##### 4.3 优雅的停止Broker
 
 kafka集群在有broker宕机的时候是能够自动的发现并对在这台宕掉机器上的leader partition进行新的leader选举的。通常broker停止的原因要么是crash了，要么是运维上因为需要进行配置修改或者维护目的进行例行重启。在后者这种情况下，除了直接kill掉broker进程外，是有更加优雅的方式来停止kafka进程的。这样做有两个好处：
 
@@ -505,11 +505,20 @@ controlled.shutdown.retry.backoff.ms=5000
 > bin/kafka-server-stop.sh
 ```
 
-* Balancing leadership
+##### 4.4 Balancing leadership
 
 当一个broker宕机，或重启以后，原先以这台broker为leader的partitions将会被转移到其他的broker上去。当这台broker重启以后，就没有任何一个partition的leader在这台机器上，也就不会服务于任何从client（producer或comsumer）来的读写操作，这样会造成这台机器过闲导致的负载不均衡问题。
 
-为了避免这种不平衡，Kafka中有一个概念叫做`preferred replidas`，比如当一个partition的replicas列表是1，5，9的时候，node 1就是这个partition的preferred，因为它出现在replicas列表的第一个。可以用一下命令来触发kafka集群对leadership的重新分配。
+为了避免这种不平衡，Kafka中有一个概念叫做`preferred replicas`，比如当一个partition的replicas列表是1，5，9的时候，node 1就是这个partition的preferred，因为它出现在replicas列表的第一个。当出现某个partition的`leader replica`跟replicas列表中的第一个broker id不一致的时候，说明现在这个partition的leader不是`preferred replica`，如以下情况：
+
+```
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 1	Replicas: 0,1,2	Isr: 2,1,0
+	Topic: test	Partition: 1	Leader: 1	Replicas: 0,1,2	Isr: 2,1,0
+	Topic: test	Partition: 2	Leader: 1	Replicas: 0,1,2	Isr: 2,1,0
+```
+
+可以用一下命令来触发kafka集群对leadership的重新分配。
 
 ```shell
 > bin/kafka-preferred-replica-election.sh --zookeeper zk_host:port/chroot
@@ -532,6 +541,21 @@ auto.leader.rebalance.enable=true
 }
 ```
 
+或者
+
+```json
+{
+ "partitions":
+  [
+    {"topic": "topic1", "partition": 0},
+    {"topic": "topic1", "partition": 1},
+    {"topic": "topic1", "partition": 2},
+    {"topic": "topic2", "partition": 0},
+    {"topic": "topic2", "partition": 1}
+  ]
+}
+```
+
 假设该json文件名为`preferred_replica_example_test.json`，那么运行命令如下；
 
 ```shell
@@ -542,3 +566,16 @@ Created preferred replica election path with test-0,test-1,test-2
 Successfully started preferred replica election for partitions Set(test-0, test-1, test-2)
 ```
 
+这里需要注意的是：当这个命令运行以后，并不是立刻就会让`preferred replica election`完成，而只是触发了这个进程开始，其后台工作步骤如下：
+
+1. 这个命令更新zookeeper中的`/admin/preferred_replica_election`节点，将需要做leader调整到`preferred replica`的partition写入到这个节点中。
+2. Controller会监听这个zk path，当有数据更新到这个zk path的时候就会触发选举，controller读取这个节点中的partition list
+3. 对每一个partition，controller会读取它的preferred replica（assigned replica列表中的第一个），如果其`prefeered replcia`不是leader，并且是在isr列表中，那么controller就会发起一个request到hold preferred replica的broker，让其变成是leader。
+
+* 如果preferred replica不在ISR列表中怎么办？
+
+这种情况下controller的move leadership任务会失败。通常需要查看是否该replica在preferred broker上是否有数据丢失。当恢复到ISR列表后可以重新运行
+
+* 如何确认操作的运行结果
+
+可以使用list topic来查看topic和partitions的状态（leader，assigned replicas，in-sync等）如果每个partition的leader都跟其assigned replica中的第一个broker id一致，则表示成功。否则失败。
