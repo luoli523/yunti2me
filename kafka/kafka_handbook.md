@@ -244,8 +244,6 @@ Option                                 Description
 
 通常当给一个kafka集群增加brokers后，这些新加入的brokers上并没有任何流量，此时就可以用该工具进行partition reassign，将已有的topics/partitions分配到这些新brokers机器上。此时可以提供两个选项：1，需要进行move的topics；2，需要接受数据的brokers列表。使用这两个选项，此工具就会自动的选择相应的topics的partitions到新的brokers上，并产生一个`JSON`文件用来描述分配的详细策略。该`JSON`文件将要在下一个步骤（包含`--reassignment-json-file` 选项）
 
-The partition reassignment tool can be used to expand an existing Kafka cluster. Cluster expansion involves including brokers with new broker ids in a Kafka cluster. Typically, when you add new brokers to a cluster, they will not receive any data from existing topics until this tool is run to assign existing topics/partitions to the new brokers. The tool allows 2 options to make it easier to move some topics in bulk to the new brokers. These 2 options are a) topics to move b) list of newly added brokers. Using these 2 options, the tool automatically figures out the placements of partitions for the topics on the new brokers and generates new JSON data which can be used in the next step (with the `--reassignment-json-file` option) to execute the move.
-
 ```shell
 $ bin/kafka-reassign-partitions.sh --zookeeper localhost:2181 --broker-list "0,2,3" --topics-to-move-json-file /tmp/topic-to-move.json  --generate
 
