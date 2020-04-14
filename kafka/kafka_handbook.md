@@ -57,7 +57,183 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 > bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic topic1 --replica-assignment 0:1:2,0:1:2,0:1:2,2:1:0 --partitions 4
 ```
 
-#### 1.1.5 删除topic
+这里需要注意的是：<span style="color:red">增加partition并不会改变已经写入到原partitions中的数据的分布，也就是说并不会导致数据被重新shuffle。所以如果消费者依赖于类似于`hash(key) % number_of_partitions`的数据分布策略，那么可能会对增加partition后的数据消费产生疑惑。如果数据是按照这种取模这种算法方式向partitions中进行分布写入，那么新的数据会按照新的partition数进行分布，但原来的数据是不会做任何的redistribution的。</span>
+
+Be aware that one use case for partitions is to semantically partition data, and **adding partitions doesn't change the partitioning of existing data** so this may disturb consumers if they rely on that partition. That is if data is partitioned by `hash(key) % number_of_partitions` then this partitioning will potentially be shuffled by adding partitions but Kafka will not attempt to automatically redistribute data in any way.
+
+#### 1.1.5 Balancing leadership（kafka-preferred-replica-election-replica-election）
+
+当一个broker宕机，或重启以后，原先以这台broker为leader的partitions将会被转移到其他的broker上去。当这台broker重启以后，就没有任何一个partition的leader在这台机器上，也就不会服务于任何从client（producer或comsumer）来的读写操作，这样会造成这台机器过闲导致的负载不均衡问题。
+
+为了避免这种不平衡，Kafka中有一个概念叫做`preferred replicas`，比如当一个partition的replicas列表是1，5，9的时候，node 1就是这个partition的preferred，因为它出现在replicas列表的第一个。当出现某个partition的`leader replica`跟replicas列表中的第一个broker id不一致的时候，说明现在这个partition的leader不是`preferred replica`，如以下情况：
+
+```
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 1	Replicas: 0,1,2	Isr: 2,1,0
+	Topic: test	Partition: 1	Leader: 1	Replicas: 0,1,2	Isr: 2,1,0
+	Topic: test	Partition: 2	Leader: 1	Replicas: 0,1,2	Isr: 2,1,0
+```
+
+可以用一下命令来触发kafka集群对leadership的重新分配。
+
+```shell
+> bin/kafka-preferred-replica-election.sh --zookeeper zk_host:port/chroot
+```
+
+但是由于这是一个集群层面的操作，通常会运行的很慢，所以也可以通过在服务配置中加入以下配置来对这个过程进行自动执行：
+
+```properties
+auto.leader.rebalance.enable=true
+```
+
+另外，这个工具还可以通过增加`--path-to-json-file`参数来对控制对哪些preferred replica进行leader选举。这个选项后面需要跟一个json文件，该json文件中定义了哪些topics的哪些partition信息。如下示例：
+
+```json
+{
+  "partitions": [
+    {"topic": "foo","partition": 1},
+    {"topic": "foobar","partition": 2}
+  ]
+}
+```
+
+或者
+
+```json
+{
+ "partitions":
+  [
+    {"topic": "topic1", "partition": 0},
+    {"topic": "topic1", "partition": 1},
+    {"topic": "topic1", "partition": 2},
+    {"topic": "topic2", "partition": 0},
+    {"topic": "topic2", "partition": 1}
+  ]
+}
+```
+
+假设该json文件名为`preferred_replica_example_test.json`，那么运行命令如下；
+
+```shell
+bin/kafka-preferred-replica-election.sh --zookeeper localhost:2181 \
+                                        --path-to-json-file preferred_replica_example_test.json
+
+Created preferred replica election path with test-0,test-1,test-2
+Successfully started preferred replica election for partitions Set(test-0, test-1, test-2)
+```
+
+这里需要注意的是：当这个命令运行以后，并不是立刻就会让`preferred replica election`完成，而只是触发了这个进程开始，其后台工作步骤如下：
+
+1. 这个命令更新zookeeper中的`/admin/preferred_replica_election`节点，将需要做leader调整到`preferred replica`的partition写入到这个节点中。
+2. Controller会监听这个zk path，当有数据更新到这个zk path的时候就会触发选举，controller读取这个节点中的partition list
+3. 对每一个partition，controller会读取它的preferred replica（assigned replica列表中的第一个），如果其`prefeered replcia`不是leader，并且是在isr列表中，那么controller就会发起一个request到hold preferred replica的broker，让其变成是leader。
+
+* 如果preferred replica不在ISR列表中怎么办？
+
+这种情况下controller的move leadership任务会失败。通常需要查看是否该replica在preferred broker上是否有数据丢失。当恢复到ISR列表后可以重新运行
+
+* 如何确认操作的运行结果
+
+可以使用list topic来查看topic和partitions的状态（leader，assigned replicas，in-sync等）如果每个partition的leader都跟其assigned replica中的第一个broker id一致，则表示成功。否则失败。
+
+* 注意：`kafka-preferred-replica-election.sh`只是尝试去调整每个partition的preferred replica，并没有对replica的broker顺序或者broker列表（`Replicas: 0,1,2`）进行修改，如果想要对replica list进行修改，需要用`kafka-reassign-partitions.sh`工具
+
+#### 1.1.6 Reassign Partitions
+
+`Reassign partition`跟上述`Preferred Replica election`有点相似，都是为了对集群内的读写流量进行负载均衡。但和Preferred Replica election只对leader replicas进行均衡不一样的是，Reassign partition是可以对每个partition的assigned replicas（也就是partition的replicas broker是列表`Replicas: 0,1,2`）进行重新分配。这样做的原因是，虽然leader replica承担了数据的写入和被消费的流量，但其他的副本也是需要从leader进行数据的sync的，因此有时候仅仅对leader的分布进行balance还不够。
+
+```shell
+bin/kafka-reassign-partitions.sh
+ 
+Option                                 Description
+------                                 -----------
+--bootstrap-server <String: Server(s)  the server(s) to use for
+  to use for bootstrapping>              bootstrapping. REQUIRED if an
+                                         absolution path of the log directory
+                                         is specified for any replica in the
+                                         reassignment json file
+--broker-list <String: brokerlist>     The list of brokers to which the
+                                         partitions need to be reassigned in
+                                         the form "0,1,2". This is required
+                                         if --topics-to-move-json-file is
+                                         used to generate reassignment
+                                         configuration
+--disable-rack-aware                   Disable rack aware replica assignment
+--execute                              Kick off the reassignment as specified
+                                         by the --reassignment-json-file
+                                         option.
+--generate                             Generate a candidate partition
+                                         reassignment configuration. Note
+                                         that this only generates a candidate
+                                         assignment, it does not execute it.
+--reassignment-json-file <String:      The JSON file with the partition
+  manual assignment json file path>      reassignment configurationThe format
+                                         to use is -
+                                       {"partitions":
+                                        [{"topic": "foo",
+                                          "partition": 1,
+                                          "replicas": [1,2,3],
+                                          "log_dirs": ["dir1","dir2","dir3"]
+                                         }],
+                                       "version":1
+                                       }
+                                       Note that "log_dirs" is optional. When
+                                         it is specified, its length must
+                                         equal the length of the replicas
+                                         list. The value in this list can be
+                                         either "any" or the absolution path
+                                         of the log directory on the broker.
+                                         If absolute log directory path is
+                                         specified, it is currently required
+                                         that the replica has not already
+                                         been created on that broker. The
+                                         replica will then be created in the
+                                         specified log directory on the
+                                         broker later.
+--throttle <Long: throttle>            The movement of partitions will be
+                                         throttled to this value (bytes/sec).
+                                         Rerunning with this option, whilst a
+                                         rebalance is in progress, will alter
+                                         the throttle value. The throttle
+                                         rate should be at least 1 KB/s.
+                                         (default: -1)
+--timeout <Long: timeout>              The maximum time in ms allowed to wait
+                                         for partition reassignment execution
+                                         to be successfully initiated
+                                         (default: 10000)
+--topics-to-move-json-file <String:    Generate a reassignment configuration
+  topics to reassign json file path>     to move the partitions of the
+                                         specified topics to the list of
+                                         brokers specified by the --broker-
+                                         list option. The format to use is -
+                                       {"topics":
+                                        [{"topic": "foo"},{"topic": "foo1"}],
+                                       "version":1
+                                       }
+--verify                               Verify if the reassignment completed
+                                         as specified by the --reassignment-
+                                         json-file option. If there is a
+                                         throttle engaged for the replicas
+                                         specified, and the rebalance has
+                                         completed, the throttle will be
+                                         removed
+--zookeeper <String: urls>             REQUIRED: The connection string for
+                                         the zookeeper connection in the form
+                                         host:port. Multiple URLS can be
+                                         given to allow fail-over.
+```
+
+
+
+**注意该命令跟kafka-preferred-replica-election.sh一样，指示修改了zookeeper path的内容和存在性，后续的调整执行是有Controller来对partition的replicas进行异步的重新分配。**
+
+
+
+**另外，该命令的默认run model是dry-run，并不是真正执行该操作，只有当加了`--execute`参数的时候才开始真正执行。**
+
+
+
+#### 1.1.7 删除topic
 
 当服务端（broker）设置`delete.topic.enable`为true时，topics是可以被kafka命令行工具删除的：
 
@@ -65,8 +241,6 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 # Delete topic named topic1
 bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic topic1
 ```
-
-
 
 ### 1.2 topic配置选项操作
 
@@ -530,7 +704,7 @@ controlled.shutdown.retry.backoff.ms=5000
 > bin/kafka-server-stop.sh
 ```
 
-##### 4.4 Balancing leadership
+##### 4.4 Balancing leadership（kafka-preferred-replica-election-replica-election）
 
 当一个broker宕机，或重启以后，原先以这台broker为leader的partitions将会被转移到其他的broker上去。当这台broker重启以后，就没有任何一个partition的leader在这台机器上，也就不会服务于任何从client（producer或comsumer）来的读写操作，这样会造成这台机器过闲导致的负载不均衡问题。
 
@@ -604,3 +778,5 @@ Successfully started preferred replica election for partitions Set(test-0, test-
 * 如何确认操作的运行结果
 
 可以使用list topic来查看topic和partitions的状态（leader，assigned replicas，in-sync等）如果每个partition的leader都跟其assigned replica中的第一个broker id一致，则表示成功。否则失败。
+
+* 注意：`kafka-preferred-replica-election.sh`只是尝试去调整每个partition的preferred replica，并没有对replica的broker顺序或者broker列表（`Replicas: 0,1,2`）进行修改，如果想要对replica list进行修改，需要用`kafka-reassign-partitions.sh`工具
