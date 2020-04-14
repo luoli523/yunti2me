@@ -60,7 +60,10 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 这里需要注意的是：
 
 ```diff
-- 增加partition并不会改变已经写入到原partitions中的数据的分布，也就是说并不会导致数据被重新shuffle。所以如果消费者依赖于类似于`hash(key) % number_of_partitions`的数据分布策略，那么可能会对增加partition后的数据消费产生疑惑。如果数据是按照这种取模这种算法方式向partitions中进行分布写入，那么新的数据会按照新的partition数进行分布，但原来的数据是不会做任何的redistribution的。```
+- 增加partition并不会改变已经写入到原partitions中的数据的分布，也就是说并不会导致数据被重新shuffle。
+- 所以如果消费者依赖于类似于`hash(key) % number_of_partitions`的数据分布策略，
+- 那么可能会对增加partition后的数据消费产生疑惑。如果数据是按照这种取模这种算法方式向partitions中进行分布写入，
+- 那么新的数据会按照新的partition数进行分布，但原来的数据是不会做任何的redistribution的。```
 ```
 
 #### 1.1.5 Balancing leadership（kafka-preferred-replica-election-replica-election）
