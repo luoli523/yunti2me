@@ -143,6 +143,8 @@ Successfully started preferred replica election for partitions Set(test-0, test-
 
 * 注意：`kafka-preferred-replica-election.sh`只是尝试去调整每个partition的preferred replica，并没有对replica的broker顺序或者broker列表（`Replicas: 0,1,2`）进行修改，如果想要对replica list进行修改，需要用`kafka-reassign-partitions.sh`工具
 
+
+
 #### 1.1.6 Reassign Partitions
 
 `Reassign partition`跟上述`Preferred Replica election`有点相似，都是为了对集群内的读写流量进行负载均衡。但和Preferred Replica election只对leader replicas进行均衡不一样的是，Reassign partition是可以对每个partition的assigned replicas（也就是partition的replicas broker是列表`Replicas: 0,1,2`）进行重新分配。这样做的原因是，虽然leader replica承担了数据的写入和被消费的流量，但其他的副本也是需要从leader进行数据的sync的，因此有时候仅仅对leader的分布进行balance还不够。
@@ -228,11 +230,110 @@ Option                                 Description
                                          given to allow fail-over.
 ```
 
+该工具有多种用法，比如：
 
+* 将已有的topics/partitions分配到新加入集群的brokers上（或者集群中负载比较低的brokers上）
+
+通常当给一个kafka集群增加brokers后，这些新加入的brokers上并没有任何流量，此时就可以用该工具进行partition reassign，将已有的topics/partitions分配到这些新brokers机器上。此时可以提供两个选项：1，需要进行move的topics；2，需要接受数据的brokers列表。使用这两个选项，此工具就会自动的选择相应的topics的partitions到新的brokers上，并产生一个`JSON`文件用来描述分配的详细策略。该`JSON`文件将要在下一个步骤（包含`--reassignment-json-file` 选项）
+
+The partition reassignment tool can be used to expand an existing Kafka cluster. Cluster expansion involves including brokers with new broker ids in a Kafka cluster. Typically, when you add new brokers to a cluster, they will not receive any data from existing topics until this tool is run to assign existing topics/partitions to the new brokers. The tool allows 2 options to make it easier to move some topics in bulk to the new brokers. These 2 options are a) topics to move b) list of newly added brokers. Using these 2 options, the tool automatically figures out the placements of partitions for the topics on the new brokers and generates new JSON data which can be used in the next step (with the `--reassignment-json-file` option) to execute the move.
+
+```shell
+$ bin/kafka-reassign-partitions.sh --zookeeper localhost:2181 --broker-list "0,2,3" --topics-to-move-json-file /tmp/topic-to-move.json  --generate
+
+Current partition replica assignment
+{"version":1,"partitions":[{"topic":"test","partition":1,"replicas":[0,1,2],"log_dirs":["any","any","any"]},{"topic":"test","partition":0,"replicas":[0,1,2],"log_dirs":["any","any","any"]},{"topic":"test","partition":2,"replicas":[0,1,2],"log_dirs":["any","any","any"]}]}
+
+Proposed partition reassignment configuration
+{"version":1,"partitions":[{"topic":"test","partition":1,"replicas":[2,3,0],"log_dirs":["any","any","any"]},{"topic":"test","partition":0,"replicas":[0,2,3],"log_dirs":["any","any","any"]},{"topic":"test","partition":2,"replicas":[3,0,2],"log_dirs":["any","any","any"]}]}
+
+$ cat /tmp/topic-to-move.json
+{
+  "topics": [
+    {"topic": "test"}
+  ],
+  "version": 1
+}
+```
+
+* 选择性的对一些partition调整到一些特定的brokers上
+
+该partition movement工具还可以选择性的对一些partition的replica进行分配到特定的brokers上去。通常如果集群存在不均衡的情况，就可以使用这个工具进行人为的负载均衡调整。这里需要用到的是一个用来描述哪些topic的哪些partition需要调整到哪些brokers上的JSON文件，也可以在上一步generate的JSON文件的基础上做调整。
+
+比如如下命令，对原本分布在“0,1,2”三台broker上的topic test进行重新分配，分配到“0,2,3”上，并进行leader的分布。
+
+```shell
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 0	Replicas: 0,1,2	Isr: 2,0,1
+	Topic: test	Partition: 1	Leader: 0	Replicas: 0,1,2	Isr: 2,0,1
+	Topic: test	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 2,0,1
+	
+
+$ cat partitions-to-move.json
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "test",
+      "partition": 1,
+      "replicas": [2,3,0],
+      "log_dirs": ["any","any","any"]
+    },
+    {
+      "topic": "test",
+      "partition": 0,
+      "replicas": [0,2,3],
+      "log_dirs": ["any","any","any"]
+    },
+    {
+      "topic": "test",
+      "partition": 2,
+      "replicas": [3,0,2],
+      "log_dirs": ["any","any","any"]
+    }
+  ]
+}
+
+$ bin/kafka-reassign-partitions.sh --zookeeper localhost:2181 --reassignment-json-file partitions-to-move.json --execute
+Current partition replica assignment
+
+{"version":1,"partitions":[{"topic":"test","partition":1,"replicas":[0,1,2],"log_dirs":["any","any","any"]},{"topic":"test","partition":0,"replicas":[0,1,2],"log_dirs":["any","any","any"]},{"topic":"test","partition":2,"replicas":[0,1,2],"log_dirs":["any","any","any"]}]}
+
+Save this to use as the --reassignment-json-file option during rollback
+Successfully started reassignment of partitions.
+
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 0	Replicas: 0,2,3	Isr: 2,0,3
+	Topic: test	Partition: 1	Leader: 0	Replicas: 2,3,0	Isr: 2,0,3
+	Topic: test	Partition: 2	Leader: 0	Replicas: 3,0,2	Isr: 2,0,3
+	
+# 此时发现test topic的replicas列表已经从原来的0,1,2变成了0,2,3，且不同partition的preferred replica也已经均匀分布在0，2和3的brokers上。只不过leader还都是在0上，现在只需要对test topic再进行一次preferred replicas election，就能把leader也调整过来。
+
+$ cat preferred_replica_example_test.json
+{
+  "partitions": [
+    {"topic": "test","partition": 0},
+    {"topic": "test","partition": 1},
+    {"topic": "test","partition": 2}
+  ]
+}
+
+$ bin/kafka-preferred-replica-election.sh --zookeeper localhost:2181 --path-to-json-file preferred_replica_example_test.json
+Created preferred replica election path with test-0,test-1,test-2
+Successfully started preferred replica election for partitions Set(test-0, test-1, test-2)
+
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 0	Replicas: 0,2,3	Isr: 2,0,3
+	Topic: test	Partition: 1	Leader: 2	Replicas: 2,3,0	Isr: 2,0,3
+	Topic: test	Partition: 2	Leader: 3	Replicas: 3,0,2	Isr: 2,0,3
+
+# 此时发现，test topic的三个partition，leader分别是0，2和3， replicas列表的排列也是按照相应顺序排列的了。
+```
 
 **注意该命令跟kafka-preferred-replica-election.sh一样，指示修改了zookeeper path的内容和存在性，后续的调整执行是有Controller来对partition的replicas进行异步的重新分配。**
-
-
 
 **另外，该命令的默认run model是dry-run，并不是真正执行该操作，只有当加了`--execute`参数的时候才开始真正执行。**
 

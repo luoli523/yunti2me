@@ -1,0 +1,7 @@
+{
+  "partitions": [
+    {"topic": "test","partition": 0},
+    {"topic": "test","partition": 1},
+    {"topic": "test","partition": 2}
+  ]
+}
