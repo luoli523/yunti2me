@@ -1,12 +1,40 @@
 # kafka handbook
 
-## 1. topic
+[1. topic](#1. topic)
 
-### 1.1 topic相关操作
+* [1.1 topic相关操作](#1.1 topic相关操作)
+  * [1.1.1 创建topic](#1.1.1 创建topic)
+  * [1.1.2 list topic](#1.1.2 list topic)
+  * [1.1.3 describe topic](#1.1.3 describe topic)
+  * [1.1.4 为topic增加partition](#1.1.4 为topic增加partition)
+  * [1.1.5 Balancing leadership](#1.1.5 Balancing leadership)
+  * [1.1.6 Reassign Partitions](#1.1.6 Reassign Partitions)
+  * [1.1.7 删除topic](#1.1.7 删除topic)
+
+[2. consumer相关操作](#2. consumer相关操作)
+
+* [2.1 console consume](#2.1 console consume)
+
+[3. producer相关操作](#3. producer相关操作)
+
+* [3.1 console producer](#3.1 console producer)
+
+[4. 集群运维相关操作](#4. 集群运维相关操作)
+
+* [4.1 启动单个kafka进程](#4.1 启动单个kafka进程)
+* [4.2 启动多broker kafka集群](#4.2 启动多broker kafka集群)
+* [4.3 优雅的停止Broker](#4.3 优雅的停止Broker)
+* [4.4 Balancing leadership](#4.4 Balancing leadership)
+
+
+
+## 1. topic<a name="1. topic"></a>
+
+### 1.1 topic相关操作<a name="1.1 topic相关操作"></a>
 
 默认情况下，如果`auto.create.topics.enable`在server的设置中为true，那么当向kafka中不存在的topic写入数据的时候会自从创建topic。自动创建的topic会包含默认数量的partition数，replication factor，并使用kafka默认的schema来做replica的assignment。
 
-#### 1.1.1 创建topic
+#### 1.1.1 创建topic<a name="1.1.1 创建topic"></a>
 
 ```bash
 # 创建一个包含1个partition，每个partition只有1个replica(replication-factor)的topic
@@ -26,7 +54,7 @@
 
 
 
-#### 1.1.2 list topic
+#### 1.1.2 list topic<a name="1.1.2 list topic"></a>
 
 ```bash
 > bin/kafka-topics.sh --zookeeper localhost:9092 \
@@ -36,7 +64,7 @@ test
 
 
 
-#### 1.1.3 describe topic
+#### 1.1.3 describe topic<a name="1.1.3 describe topic"></a>
 
 ```bash
 # describe一个包含3个partition，每个partition有3个replica（replication-factor）的topic
@@ -51,7 +79,7 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 
 
 
-#### 1.1.4 为topic增加partition
+#### 1.1.4 为topic增加partition<a name="1.1.4 为topic增加partition"></a>
 
 在kafka中，partition数量决定了其并发度，既一个topic中的messages是被分布在多个partitions中的，这些partition分别被不同的broker server存储。当创建一个topic的时候，该topic的partition数就已经被确定了。但当这个topic中的数据持续增加，后续可能需要为该topic增加更多的partitions。对topic进行增加partition的操作如下：
 
@@ -74,7 +102,7 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 
 
 
-#### 1.1.5 Balancing leadership（kafka-preferred-replica-election-replica-election）
+#### 1.1.5 Balancing leadership（kafka-preferred-replica-election-replica-election）<a name="1.1.5 Balancing leadership"></a>
 
 当一个broker宕机，或重启以后，原先以这台broker为leader的partitions将会被转移到其他的broker上去。当这台broker重启以后，就没有任何一个partition的leader在这台机器上，也就不会服务于任何从client（producer或comsumer）来的读写操作，这样会造成这台机器过闲导致的负载不均衡问题。
 
@@ -153,7 +181,7 @@ Successfully started preferred replica election for partitions Set(test-0, test-
 
 
 
-#### 1.1.6 Reassign Partitions
+#### 1.1.6 Reassign Partitions<a name="1.1.6 Reassign Partitions"></a>
 
 `Reassign partition`跟上述`Preferred Replica election`有点相似，都是为了对集群内的读写流量进行负载均衡。但和Preferred Replica election只对leader replicas进行均衡不一样的是，Reassign partition是可以对每个partition的assigned replicas（也就是partition的replicas broker是列表`Replicas: 0,1,2`）进行重新分配。这样做的原因是，虽然leader replica承担了数据的写入和被消费的流量，但其他的副本也是需要从leader进行数据的sync的，因此有时候仅仅对leader的分布进行balance还不够。
 
@@ -345,7 +373,7 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 
 
 
-#### 1.1.7 删除topic
+#### 1.1.7 删除topic<a name="1.1.7 删除topic"></a>
 
 当服务端（broker）设置`delete.topic.enable`为true时，topics是可以被kafka命令行工具删除的：
 
@@ -356,7 +384,7 @@ bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic topic1
 
 
 
-### 1.2 topic配置选项操作
+### 1.2 topic配置选项操作<a name="1.2 topic配置选项操作"></a>
 
 Topic相关的配置选项可以在server的config中进行默认设置，当客户端发送命令的时候没有提供相应的配置选项的特殊设定，则会使用server端的默认值。
 
@@ -403,7 +431,7 @@ Topic相关的配置选项可以在server的config中进行默认设置，当客
 
 
 
-### 1.3 topic相关配置选项
+### 1.3 topic相关配置选项<a name="1.3 topic相关配置选项"></a>
 
 kafka中的topic默认都有这些配置选项，如果没有单独做特殊设定，则会使用系统默认值。
 
@@ -730,9 +758,9 @@ Indicates whether to enable replicas not in the ISR set to be elected as leader 
 
 
 
-## 2. consumer相关操作
+## 2. consumer相关操作<a name="2. consumer相关操作"></a>
 
-##### 2.1 console consumer
+##### 2.1 console consumer<a name="2.1 console consumer"></a>
 
 ```bash
 > bin/kafka-console-consumer.sh  --topic test \
@@ -740,9 +768,9 @@ Indicates whether to enable replicas not in the ISR set to be elected as leader 
                                  --from-beginning
 ```
 
-## 3. producer相关操作
+## 3. producer相关操作<a name="3. producer相关操作"></a>
 
-#####  3.1 console producer
+#####  3.1 console producer<a name="3.1 console producer"></a>
 
 ```bash
 > bin/kafka-console-producer.sh --broker-list localhost:9092 \
@@ -751,9 +779,9 @@ This is a message
 This is another message
 ```
 
-## 4. 集群运维相关操作
+## 4. 集群运维相关操作<a name="4. 集群运维相关操作"></a>
 
-##### 4.1 启动单个kafka进程
+##### 4.1 启动单个kafka进程<a name="4.1 启动单个kafka进程"></a>
 
 ```bash
 # 这里需要确保
@@ -762,7 +790,7 @@ This is another message
 bin/kafka-server-start.sh config/server.properties 
 ```
 
-##### 4.2 启动多broker kafka集群
+##### 4.2 启动多broker kafka集群<a name="4.2 启动多broker kafka集群"></a>
 
 这里是用一台机器上不同端口的启动方式来模拟多台broker，在实际分布式环境中通常是所有kafka进程使用相同的端口
 
@@ -789,7 +817,7 @@ config/server-2.properties:
 ...
 ```
 
-##### 4.3 优雅的停止Broker
+##### 4.3 优雅的停止Broker<a name="优雅的停止Broker"></a>
 
 kafka集群在有broker宕机的时候是能够自动的发现并对在这台宕掉机器上的leader partition进行新的leader选举的。通常broker停止的原因要么是crash了，要么是运维上因为需要进行配置修改或者维护目的进行例行重启。在后者这种情况下，除了直接kill掉broker进程外，是有更加优雅的方式来停止kafka进程的。这样做有两个好处：
 
@@ -820,7 +848,7 @@ controlled.shutdown.retry.backoff.ms=5000
 > bin/kafka-server-stop.sh
 ```
 
-##### 4.4 Balancing leadership（kafka-preferred-replica-election-replica-election）
+##### 4.4 Balancing leadership（kafka-preferred-replica-election-replica-election）<a name="Balancing leadership"></a>
 
 当一个broker宕机，或重启以后，原先以这台broker为leader的partitions将会被转移到其他的broker上去。当这台broker重启以后，就没有任何一个partition的leader在这台机器上，也就不会服务于任何从client（producer或comsumer）来的读写操作，这样会造成这台机器过闲导致的负载不均衡问题。
 
