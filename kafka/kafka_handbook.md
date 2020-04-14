@@ -1,30 +1,32 @@
 # kafka handbook
 
-[1. topic](#1. topic)
+[1. topic](#1-topic)
 
-* [1.1 topic相关操作](#1.1 topic相关操作)
-  * [1.1.1 创建topic](#1.1.1 创建topic)
-  * [1.1.2 list topic](#1.1.2 list topic)
-  * [1.1.3 describe topic](#1.1.3 describe topic)
-  * [1.1.4 为topic增加partition](#1.1.4 为topic增加partition)
-  * [1.1.5 Balancing leadership](#1.1.5 Balancing leadership)
-  * [1.1.6 Reassign Partitions](#1.1.6 Reassign Partitions)
-  * [1.1.7 删除topic](#1.1.7 删除topic)
+* [1.1 topic相关操作](#11-topic相关操作)
+  * [1.1.1 创建topic](#111-创建topic)
+  * [1.1.2 list topic](#112-list-topic)
+  * [1.1.3 describe topic](#113-describe-topic)
+  * [1.1.4 为topic增加partition](#114-为topic增加partition)
+  * [1.1.5 Balancing leadership](#115-balancing-leadershipkafka-preferred-replica-election-replica-election)
+  * [1.1.6 Reassign Partitions](#116-reassign-partitions)
+  * [1.1.7 删除topic](#117-删除topic)
+* [1.2 topic配置选项操作](#12-topic配置选项操作)
+* [1.3 topic相关配置选项](#13-topic相关配置选项)
 
-[2. consumer相关操作](#2. consumer相关操作)
+[2. consumer相关操作](#2-consumer相关操作)
 
-* [2.1 console consume](#2.1 console consume)
+* [2.1 console consume](#21-console-consumer)
 
-[3. producer相关操作](#3. producer相关操作)
+[3. producer相关操作](#3-producer相关操作)
 
-* [3.1 console producer](#3.1 console producer)
+* [3.1 console producer](#31-console-producer)
 
-[4. 集群运维相关操作](#4. 集群运维相关操作)
+[4. 集群运维相关操作](#4-集群运维相关操作)
 
-* [4.1 启动单个kafka进程](#4.1 启动单个kafka进程)
-* [4.2 启动多broker kafka集群](#4.2 启动多broker kafka集群)
-* [4.3 优雅的停止Broker](#4.3 优雅的停止Broker)
-* [4.4 Balancing leadership](#4.4 Balancing leadership)
+* [4.1 启动单个kafka进程](#41-启动单个kafka进程)
+* [4.2 启动多broker kafka集群](#42-启动多broker-kafka集群)
+* [4.3 优雅的停止Broker](#43-优雅的停止broker)
+* [4.4 Balancing leadership](#44-balancing-leadershipkafka-preferred-replica-election-replica-election)
 
 
 
