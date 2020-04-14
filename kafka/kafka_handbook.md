@@ -4,6 +4,8 @@
 
 ### 1.1 topic相关操作
 
+默认情况下，如果`auto.create.topics.enable`在server的设置中为true，那么当向kafka中不存在的topic写入数据的时候会自从创建topic。自动创建的topic会包含默认数量的partition数，replication factor，并使用kafka默认的schema来做replica的assignment。
+
 #### 1.1.1 创建topic
 
 ```bash
@@ -42,6 +44,29 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 	Topic: test	Partition: 1	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
 	Topic: test	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
 ```
+
+#### 1.1.4 为topic增加partition
+
+在kafka中，partition数量决定了其并发度，既一个topic中的messages是被分布在多个partitions中的，这些partition分别被不同的broker server存储。当创建一个topic的时候，该topic的partition数就已经被确定了。但当这个topic中的数据持续增加，后续可能需要为该topic增加更多的partitions。对topic进行增加partition的操作如下：
+
+```shell
+# Increase number of partitions for topic
+> bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic topic1 --partitions 4
+  
+# Increase number of partitions with specific replica assignment
+> bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic topic1 --replica-assignment 0:1:2,0:1:2,0:1:2,2:1:0 --partitions 4
+```
+
+#### 1.1.5 删除topic
+
+当服务端（broker）设置`delete.topic.enable`为true时，topics是可以被kafka命令行工具删除的：
+
+```shell
+# Delete topic named topic1
+bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic topic1
+```
+
+
 
 ### 1.2 topic配置选项操作
 
