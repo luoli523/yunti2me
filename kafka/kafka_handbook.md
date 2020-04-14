@@ -24,6 +24,8 @@
                       --topic my-replicated-topic
 ```
 
+
+
 #### 1.1.2 list topic
 
 ```bash
@@ -31,6 +33,8 @@
                       --list
 test
 ```
+
+
 
 #### 1.1.3 describe topic
 
@@ -44,6 +48,8 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 	Topic: test	Partition: 1	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
 	Topic: test	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
 ```
+
+
 
 #### 1.1.4 为topic增加partition
 
@@ -65,6 +71,8 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 - 那么可能会对增加partition后的数据消费产生疑惑。如果数据是按照这种取模这种算法方式向partitions中进行分布写入，
 - 那么新的数据会按照新的partition数进行分布，但原来的数据是不会做任何的redistribution的。```
 ```
+
+
 
 #### 1.1.5 Balancing leadership（kafka-preferred-replica-election-replica-election）
 
@@ -348,6 +356,8 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic topic1
 ```
 
+
+
 ### 1.2 topic配置选项操作
 
 Topic相关的配置选项可以在server的config中进行默认设置，当客户端发送命令的时候没有提供相应的配置选项的特殊设定，则会使用server端的默认值。
@@ -392,6 +402,8 @@ Topic相关的配置选项可以在server的config中进行默认设置，当客
                        --alter \
                        --delete-config max.message.bytes
 ```
+
+
 
 ### 1.3 topic相关配置选项
 
