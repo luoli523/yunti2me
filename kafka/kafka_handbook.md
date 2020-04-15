@@ -926,3 +926,12 @@ Successfully started preferred replica election for partitions Set(test-0, test-
 可以使用list topic来查看topic和partitions的状态（leader，assigned replicas，in-sync等）如果每个partition的leader都跟其assigned replica中的第一个broker id一致，则表示成功。否则失败。
 
 * 注意：`kafka-preferred-replica-election.sh`只是尝试去调整每个partition的preferred replica，并没有对replica的broker顺序或者broker列表（`Replicas: 0,1,2`）进行修改，如果想要对replica list进行修改，需要用`kafka-reassign-partitions.sh`工具
+
+另外，kafka中还可以通过设置broker的rack来让kafka自动的对replica尽量的均匀分布在不同的rack，同时也可以避免kafka集群对整个rack的故障能够免疫。要设置broker的rack信息，只需要在server配置里加入如下配置：
+
+```properties
+broker.rack=my-rack-id
+```
+
+需要注意的是，kafka会尽量保证所有的partition的leader replica均匀的分布在所有的broker上，而不会考虑在各个rack上的分布，以此来确保负载均衡。而且如果不同的rack上有数量不同的broker，那么broker少的rack会被分配更多的数据，所以一个非常重要的点是：**rack规划的时候，需要尽量确保每个rack内包含的broker数量尽量相等 **
+
