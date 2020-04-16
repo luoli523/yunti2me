@@ -16,7 +16,7 @@
 [2. consumer相关操作](#2-consumer相关操作)
 
 * [2.1 console consume](#21-console-consumer)
-* [2.2 Checking consumer position](22-checking-consumer-position)
+* [2.2 Checking consumer position](#22-checking-consumer-position)
 * [2.3 Managing Consumer Groups](#23-managing-consumer-groups)
 
 [3. producer相关操作](#3-producer相关操作)
@@ -29,10 +29,6 @@
 * [4.2 启动多broker kafka集群](#42-启动多broker-kafka集群)
 * [4.3 优雅的停止Broker](#43-优雅的停止broker)
 * [4.4 Balancing leadership](#44-balancing-leadershipkafka-preferred-replica-election-replica-election)
-* [4.5 Checking consumer position](45-checking-consumer-position)
-* [4.6 Managing Consumer Groups](#46-managing-consumer-groups)
-
-
 
 ## 1. topic<a name="1. topic"></a>
 
