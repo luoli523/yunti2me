@@ -1085,4 +1085,3 @@ broker.rack=my-rack-id
 ```
 
 需要注意的是，kafka会尽量保证所有的partition的leader replica均匀的分布在所有的broker上，而不会考虑在各个rack上的分布，以此来确保负载均衡。而且如果不同的rack上有数量不同的broker，那么broker少的rack会被分配更多的数据，所以一个非常重要的点是：**rack规划的时候，需要尽量确保每个rack内包含的broker数量尽量相等 **
-
