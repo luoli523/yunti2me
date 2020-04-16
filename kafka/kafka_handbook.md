@@ -27,6 +27,8 @@
 * [4.2 启动多broker kafka集群](#42-启动多broker-kafka集群)
 * [4.3 优雅的停止Broker](#43-优雅的停止broker)
 * [4.4 Balancing leadership](#44-balancing-leadershipkafka-preferred-replica-election-replica-election)
+* [4.5 Checking consumer position](45-checking-consumer-position)
+* [4.6 Managing Consumer Groups](#46-managing-consumer-groups)
 
 
 
