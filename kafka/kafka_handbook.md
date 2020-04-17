@@ -9,7 +9,8 @@
   * [1.1.4 为topic增加partition](#114-为topic增加partition)
   * [1.1.5 Balancing leadership](#115-balancing-leadershipkafka-preferred-replica-election-replica-election)
   * [1.1.6 Reassign Partitions](#116-reassign-partitions)
-  * [1.1.7 删除topic](#117-删除topic)
+  * [1.1.7 增加和减少replica factor](#117-增加和减少replica-factor)
+  * [1.1.8 删除topic](#118-删除topic)
 * [1.2 topic配置选项操作](#12-topic配置选项操作)
 * [1.3 topic相关配置选项](#13-topic相关配置选项)
 
@@ -373,9 +374,88 @@ Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
 
 **另外，该命令的默认run model是dry-run，并不是真正执行该操作，只有当加了`--execute`参数的时候才开始真正执行。**
 
+#### 1.1.7 增加和减少replica factor<a name="1.1.7 增加和减少replica factor"></a>
+
+Reassign partitions工具同样也可以用来对replica factor进行增加操作。只需要编辑执行`kafka-reassign-partitions.sh`时的`---reassignment-json-file`的JSON文件，将相应的partitions的replica列表进行指定即可，比如：
+
+```shell
+# test topic的3个partition都是分别分布在0，2，3三台broker上的，现在要对partition0增加factor，并让它增加一个replica到1 broker
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 2	Replicas: 0,2,3	Isr: 2,0,3
+	Topic: test	Partition: 1	Leader: 2	Replicas: 2,3,0	Isr: 3,2,0
+	Topic: test	Partition: 2	Leader: 3	Replicas: 3,0,2	Isr: 2,0,3
+
+# 编辑要增加replica factor的json文件，里面定义了要增加factor的topic partition，以及其assign replica broker列表，这里增加了1这个broker
+$ cat json/increase-replication-factor.json
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "test",
+      "partition": 0,
+      "replicas": [0,2,3,1]
+    }
+  ]
+}
+
+$ bin/kafka-reassign-partitions.sh --zookeeper localhost:2181 --reassignment-json-file increase-replication-factor.json --execute
+Current partition replica assignment
+
+{"version":1,"partitions":[{"topic":"test","partition":1,"replicas":[2,3,0],"log_dirs":["any","any","any"]},{"topic":"test","partition":0,"replicas":[0,2,3],"log_dirs":["any","any","any"]},{"topic":"test","partition":2,"replicas":[3,0,2],"log_dirs":["any","any","any"]}]}
+
+Save this to use as the --reassignment-json-file option during rollback
+Successfully started reassignment of partitions.
+
+# 执行完成后可以用--verify来确认执行是否成功。注意这里用的json file得是`--execute`时使用的同一个文件
+$ bin/kafka-reassign-partitions.sh --zookeeper localhost:2181 --reassignment-json-file increase-replication-factor.json --verify
+Status of partition reassignment:
+Reassignment of partition test-0 completed successfully
+
+# 也可以用kafka-topics.sh加--describe来确认，如下可以看到，partition0中增加了1这个broker，有4个副本了
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 2	Replicas: 0,2,3,1	Isr: 2,0,3,1
+	Topic: test	Partition: 1	Leader: 2	Replicas: 2,3,0	Isr: 3,2,0
+	Topic: test	Partition: 2	Leader: 3	Replicas: 3,0,2	Isr: 2,0,3
+```
+
+通过相同的方法，也能够对replica的副本进行减少，只需要在ressignment-json-file中将相应的brokerid去掉即可：
+
+```shell
+# 将上述步骤中已经加了1这个broker的test topic的partition0改成去掉1这个broker
+$ cat descrease-replication-factor.json
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "test",
+      "partition": 0,
+      "replicas": [0,2,3]
+    }
+  ]
+}
+
+# 然后用descrease-replication-factor.json这个配置进行reassign partitions操作
+$ bin/kafka-reassign-partitions.sh --zookeeper localhost:2181 --reassignment-json-file descrease-replication-factor.json --execute
+Current partition replica assignment
+
+{"version":1,"partitions":[{"topic":"test","partition":1,"replicas":[2,3,0],"log_dirs":["any","any","any"]},{"topic":"test","partition":0,"replicas":[0,2,3,1],"log_dirs":["any","any","any","any"]},{"topic":"test","partition":2,"replicas":[3,0,2],"log_dirs":["any","any","any"]}]}
+
+Save this to use as the --reassignment-json-file option during rollback
+Successfully started reassignment of partitions.
+
+# 执行后确认，1 broker已经从partition0的replica broker 列表中去掉，相应的在那台broker上的log目录中该topic的partition目录也会被系统自动删除
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+Topic:test	PartitionCount:3	ReplicationFactor:3	Configs:
+	Topic: test	Partition: 0	Leader: 2	Replicas: 0,2,3	Isr: 2,0,3
+	Topic: test	Partition: 1	Leader: 2	Replicas: 2,3,0	Isr: 3,2,0
+	Topic: test	Partition: 2	Leader: 3	Replicas: 3,0,2	Isr: 2,0,3
+```
 
 
-#### 1.1.7 删除topic<a name="1.1.7 删除topic"></a>
+
+#### 1.1.8 删除topic<a name="1.1.8 删除topic"></a>
 
 当服务端（broker）设置`delete.topic.enable`为true时，topics是可以被kafka命令行工具删除的：
 
