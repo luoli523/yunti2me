@@ -25,3 +25,4 @@ WHERE table = 'visits'
 └───────────┴────────────────┴────────┘
 ```
 
+* 通常使用`SummingMergeTree`或者`AggregatingMergeTree`的时候，通常把所有的维度列都加入到`ORDER BY`列中是一个比较好的实践。这样`ORDER BY`的表达式会是一长串的列组成，并且这组列还会因为新加维度必须频繁更新。这种情况下，`Primary Key`中仅仅预留少量的column以保证高效的范围扫描，而将剩下的维度列全部放入`ORDER BY`的tuple中，这样合理。
